@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Support from './pages/Support/Support';

@@ -1,17 +1,19 @@
 import React from 'react';
-import logo from '../assets/uwi_logo.png';
+import { assets } from '../../assets/assets';
+import '../../index.css';
+
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
         <a href="/">
-          <img src={logo} alt="UWI Logo" />
+          <img src={assets.uwi_logo} alt="UWI Logo" />
         </a>
-        <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div className="navbar__toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
         </div>
       </div>
       <ul className="nav-links">
