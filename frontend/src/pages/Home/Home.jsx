@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from "../components/Navbar";
 import '../index.css';
-import HeroSection from '../components/HeroSection';
 
 const Home = () => {
   return (
@@ -11,7 +9,11 @@ const Home = () => {
       </div>
       <div className="folder-tab">
         <Navbar/>
-        <HeroSection />
+            <div className="hero-content">
+              <h1>LOREM IPSUM DOLOR<br />SIT AMET</h1>
+              <p>Lorem ipsum dolor sit amet.</p>
+                  <button>See more</button>
+          </div>
       </div>
     </div>
   );

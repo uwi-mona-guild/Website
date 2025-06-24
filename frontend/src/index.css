@@ -1,4 +1,5 @@
 /* global.css */
+@import "tailwindcss";
 
 :root { /* Given by the Graphics Designers*/
   --font-default: 'Canva Sans', sans-serif;
