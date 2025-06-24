@@ -2,10 +2,10 @@
   "name": "express_backend_tutorial",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "dev": "nodemon --env-file .env app.js"
   },
   "keywords": [],
   "author": "",
