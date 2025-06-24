@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/uwi_logo.png';
+import logo from '../../assets/uwi-mona-guild-banner.png';
 
 const Navbar = () => {
   return (

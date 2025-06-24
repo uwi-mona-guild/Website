@@ -1,7 +1,12 @@
-/* global.css */
-@import "tailwindcss";
+/* import.css */
+/* Tailwind may break default browser elements like buttons if not installed properly*/
+/* Also css in here needs to be simplified, a lot of things are overwritten*/
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
-:root { /* Given by the Graphics Designers*/
+/* Scheme given by the Graphics Designers */
+:root { 
   --font-default: 'Canva Sans', sans-serif;
   --font-heading-primary: 'League Spartan', sans-serif;
   --font-heading-fancy: 'Luxurious Script', cursive;
@@ -23,8 +28,6 @@
 
 h1, h2, h3 {
   font-family: var(--font-heading-primary);
-  /*color: var(--color-primary);
-  background-color: var(--color-secondary);*/
 }
 
 h1.fancy {
@@ -35,12 +38,13 @@ button {
   cursor: pointer;
   background-color: var(color-primary);
   color: var(--color-secondary);
-  border: none;
 }
 
 button:hover {
   background-color: var(--color-accent);
+  color: var(--color-secomdary);
 }
+
 *{ 
     margin: 0;
     padding: 0;
