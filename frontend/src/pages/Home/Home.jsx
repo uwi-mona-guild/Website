@@ -4,7 +4,8 @@ const Home = () => {
   return (
     <div className="main-container">
       <div className="search">
-        <input type="text" placeholder="Search..." />
+        <input type="text" name="search" placeholder="Search..." />
+
       </div>
       <div className="folder-tab">
             <div className="hero-content">

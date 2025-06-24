@@ -1,17 +1,18 @@
 import React from 'react';
 import logo from '../../assets/uwi-mona-guild-banner.png';
+import * as assets from '../../assets';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
         <a href="/">
-          <img src={logo} alt="UWI Logo" />
+          <img src={assets.banner} alt="Guild Banner" />
         </a>
-        <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div className="navbar__toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
         </div>
       </div>
       <ul className="nav-links">
