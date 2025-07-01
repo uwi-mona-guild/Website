@@ -10,3 +10,14 @@ exports.getAllEvents = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// Create a new event
+exports.createEvent = async (req, res) => {
+  try {
+    const event = new Event(req.body);
+    await event.save();
+    res.status(201).json(event);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
