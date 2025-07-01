@@ -14,7 +14,11 @@ const getAllSupportRequests = async (req, res) => {
 const createSupportRequest = async (req, res) => {
 	try {
 		const ticket = await Ticket.create(req.body);
-		if (ticket) res.status(200).send("Support request created sucessfully");
+		if (ticket) {
+			res.status(201).send("Support request created sucessfully")  
+		}else{
+			throw new Error("Failed to create support request");
+		}	
 	} catch (error) {
 		res.status(500).send(error.message);
 	}
@@ -41,7 +45,11 @@ const updateSupportRequest = async (req, res) => {
 			return res.status(404).send("Support request not found");
 		}
 		const updated = await Ticket.findById(id);
-		res.status(200).json({ updatedTicket: updated });
+		if (updated) {
+			res.status(201).send("Support request updated sucessfully")  
+		}else{
+			throw new Error("Failed to create update request");
+		}	
 	} catch (error) {
 		res.status(500).send(error.message);
 	}
