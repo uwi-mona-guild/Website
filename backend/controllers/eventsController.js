@@ -2,7 +2,7 @@
 const Event = require('../models/event'); // adjust path as needed
 
 // Get all events
-exports.getAllEvents = async (req, res) => {
+const getAllEvents = async (req, res) => {
   try {
     const events = await Event.find();
     res.json(events);
@@ -12,7 +12,7 @@ exports.getAllEvents = async (req, res) => {
 };
 
 // Create a new event
-exports.createEvent = async (req, res) => {
+const createEvent = async (req, res) => {
   try {
     const event = new Event(req.body);
     await event.save();
@@ -21,3 +21,9 @@ exports.createEvent = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+
+module.exports = {
+  getAllEvents,
+  createEvent,
+}
