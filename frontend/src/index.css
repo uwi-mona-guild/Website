@@ -99,7 +99,7 @@ body{
     width: 100%;
     padding: 10px 20px;
     background-color: #7b0000;
-    border-radius: 2rem;
+
     margin-bottom: 2rem;
     
 }
@@ -133,8 +133,6 @@ body{
 }
 
 .logo{
-    width: 20%;
-    height: 50%; 
     display: flex;
     align-items: left;
     justify-content: left;
@@ -158,7 +156,7 @@ body{
 }
 
 .search input{
-    border: 2px solid #7b0000;
+    border: 2px solid #000000;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     width: 200px;
@@ -310,4 +308,159 @@ body{
         opacity: 0;
     }
 
+}
+
+/* Footer styles */
+.footer-container {
+  background-color: #000; /* Black background */
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.footer-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Social Media Bar */
+.social-media-bar {
+  background-color: #b30000; /* Red bar */
+  width: 100%;
+  padding: 15px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* Main Footer Content */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.footer-logo-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-contact-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: #b30000; /* Red icons */
+}
+
+.footer-map {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Copyright Section */
+.copyright-section {
+  background-color: #111;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #b30000; /* Red button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
