@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowUp,FaFacebookF, FaInstagram, FaYoutube, FaGlobe } from 'react-icons/fa'; 
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowUp,FaFacebookF, FaInstagram, FaYoutube, FaGlobe, FaTiktok } from 'react-icons/fa'; 
 import { FaXTwitter, } from 'react-icons/fa6';
 import '../../index.css';
-import { logo } from '../../assets';
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +26,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className={`footer-container ${isVisible ? 'float-in' : ''}`}>
+    <div className={`footer-container ${isVisible ? 'float-in' : ''}`}>
       {/* Main Content Section */}
       <div className="footer-content">
         {/* Contact Info */}
@@ -63,7 +62,7 @@ const Footer = () => {
       <div className="social-media-bar">
         <div className="social-icons">
           <a href="https://www.mona.uwi.edu/" target="_blank" rel="noopener noreferrer"><FaGlobe /></a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://www.tiktok.com/@uwimonaguild" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
           <a href="https://www.instagram.com/uwimonaguild?utm_source=ig_web_button_share_sheet&igsh=MXdoOGg0eW1qbXIwaw==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           <a href="https://www.youtube.com/@UWITVGlobal" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
           <a href="https://x.com/uwimonaguild?lang=en" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
@@ -92,7 +91,7 @@ const Footer = () => {
           <FaArrowUp />
         </button>
       )}
-    </footer>
+    </div>
   );
 };
 

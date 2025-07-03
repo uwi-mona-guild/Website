@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+.events-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding-top: 100px;
+}
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: #4a5568;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}

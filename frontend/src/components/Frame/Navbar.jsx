@@ -1,9 +1,29 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import * as assets from '../../assets';
 import './Components.css'
 
 
 const Navbar = () => {
+
+  /*const navbarRef = React.useRef(null);
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      
+      if (prevScrollPos > currentScrollPos) {
+        navbarRef.current.style.top = "0";
+      } else {
+        navbarRef.current.style.top = "-200px";
+      }
+      
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);}, []);
+*/
   return (
     <nav className="navbar">
       <div className="logo">
