@@ -100,6 +100,7 @@
 .view-button:hover {
   background: var(--maroon);
   color: white;
+  fill: inherit;
 }
 
 .view-button.active svg, 
@@ -116,18 +117,18 @@
 
 .calendar-days-header {
   grid-column: span 7;
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(7, 1fr);
-  text-align: center;
+  text-align: initial;
   font-weight: 600;
   color: var(--maroon);
-  margin-bottom: 0.5rem;
+  padding-left: 30px;
+  gap: 30px;
 }
 
 .calendar-day {
-
   height: 200px;
-  border: 1px solid var(--gray);
+  border: 3px solid var(--maroon);
   border-radius: var(--border-radius);
   background-color: white;
   position: relative;
@@ -139,7 +140,7 @@
 }
 
 .calendar-day:hover {
-  border-color: var(--maroon);
+  transform: scale(1.05);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -153,17 +154,20 @@
   position: absolute;
   top: 6px;
   left: 6px;
-  background-color: var(--maroon);
+  background-color: #8B0000; 
   color: white;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid white; 
+  box-shadow: 0 0 0 2px #8B0000; 
 }
+
 
 .day-event-thumb {
   width: 100%;
@@ -173,175 +177,223 @@
 }
 
 /* List View Styles */
-.event-list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1.5rem;
+.event-list-wrapper {
+  padding: 1rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.event-list-item {
-  display: flex;
-  gap: 1.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--gray);
+.event-list-header {
+  color: var(--maroon);
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 0.2rem;
 }
 
-.event-date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 60px;
-}
-
-.event-day {
-  font-size: 28px;
+.event-month-title {
+  font-size: 36px;
   font-weight: bold;
   color: var(--maroon);
+  margin-bottom: 1rem;
 }
 
-.event-weekday {
-  font-size: 14px;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.year-style {
+  font-family: cursive;
+  font-weight: normal;
+  color: #888;
+  margin-left: 0.5rem;
 }
 
-.event-content {
+.event-day-banner {
+  background-color: var(--maroon);
+  color: white;
+  padding: 1rem;
+  border-radius: 16px 16px 0 0;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-day-number {
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.event-day-name {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.event-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+.event-close-button:hover {
+  transform: scale(1.1);
+}
+
+.event-list-container {
+  background: var(--maroon);
+  padding: 1rem;
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-list-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.event-image {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.event-info {
   flex: 1;
 }
 
-.event-title {
+.event-title-large {
   font-size: 20px;
-  font-weight: bold;
-  margin: 0 0 0.5rem 0;
-  color: var(--maroon);
-  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0;
+  color: #111;
 }
 
 .event-description {
+  margin: 0.5rem 0;
   color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.5;
 }
 
-.event-tasks {
+.event-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.task-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 0.25rem;
   font-size: 14px;
 }
 
-.task-icon {
-  color: #999;
-  min-width: 18px;
-}
-
-.task-icon.completed {
-  color: var(--maroon);
-}
-
-.task-time {
-  color: #666;
-  min-width: 70px;
-}
-
-.task-text {
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #333;
 }
 
-.no-events {
-  text-align: center;
-  color: #666;
-  margin-top: 2rem;
-  font-style: italic;
+.event-meta-icon {
+  color: var(--maroon);
 }
 
-/* Event Card Styles */
+.event-list-empty {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #555;
+}
+/* Popout card overlay styles */
 .event-card-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .event-card {
   background: white;
-  border-radius: 12px;
-  width: 90%;
+  border-radius: 16px;
   max-width: 600px;
-  max-height: 200px;
-  overflow-y: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease-in-out;
 }
 
 .event-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--gray);
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 1;
-}
-
-.event-card-header h3 {
-  margin: 0;
   color: var(--maroon);
-  font-size: 1.5rem;
+  border-bottom: 2px solid var(--gray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .close-button {
   background: none;
   border: none;
-  color: #666;
+  font-size: 24px;
   cursor: pointer;
-  padding: 0.5rem;
+  color: var(--maroon);
+  transition: transform 0.2s ease;
 }
 
 .close-button:hover {
-  color: var(--maroon);
+  transform: scale(1.2);
 }
 
-.event-card-content {
-  padding: 1.5rem;
-}
-
-.event-card-item {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.event-card-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+.event-card-content .event-card-item {
+  margin-bottom: 1rem;
 }
 
 .event-card-item h4 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  font-size: 20px;
   color: var(--maroon);
-  text-transform: uppercase;
 }
 
 .event-card-item p {
-  margin: 0 0 1rem 0;
-  color: #555;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+.event-tasks {
+  margin-top: 1rem;
 }
 
-/* Reuse the task styles from List component */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 14px;
+}
+
+.task-icon {
+  color: var(--maroon);
+}
+
+.task-icon.completed {
+  color: green;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.9); opacity: 0 }
+  100% { transform: scale(1); opacity: 1 }
+}

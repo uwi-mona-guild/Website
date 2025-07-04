@@ -63,7 +63,7 @@ const Events = () => {
       onClick={() => setViewMode('list')} 
       className={`view-button ${viewMode === 'list' ? 'active' : ''}`}
     >
-      <FiList size={20} />
+      <FiList size={20} color="white"/>
     </button>
   </div>
 </div>
@@ -76,7 +76,15 @@ const Events = () => {
           onDateClick={handleDateClick}
         />
       ) : (
-        <List events={events} />
+        <List
+  events={events.filter(
+    (e) =>
+      selectedDate &&
+      new Date(e.date).toDateString() === selectedDate.toDateString()
+  )}
+  selectedDate={selectedDate}
+  onDateClick={handleDateClick}
+/>
       )}
 
       {selectedDate && (
