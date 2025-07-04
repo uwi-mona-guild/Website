@@ -7,7 +7,7 @@ import EventCard from './EventPost';
 import { FiGrid, FiList, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Events = () => {
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 8)); // Sept 2025
+  const [currentDate, setCurrentDate] = useState(new Date()); // Initialize with current date
   const [events, setEvents] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [viewMode, setViewMode] = useState('grid');
@@ -34,6 +34,9 @@ const Events = () => {
     setSelectedDate(null);
   };
 
+  const today = new Date();
+  const pastEvents = events.filter(e => new Date(e.date) < today); // Filter past events
+
   return (
     <div className="events-container">
 
@@ -51,7 +54,7 @@ const Events = () => {
       </button>
     </div>
   </div>
-  
+  {/* Month navigation and View Option */}
   <div className="view-toggle">
     <button 
       onClick={() => setViewMode('grid')} 
@@ -96,7 +99,37 @@ const Events = () => {
           onClose={() => setSelectedDate(null)}
         />
       )}
+      {/* PAST EVENTS */}
+      <div className="past-events-wrapper">
+  <h2 className="past-events-heading">PAST EVENTS</h2>
+
+  {pastEvents.length > 0 ? (
+    <div className="past-events-list">
+      {pastEvents.map((event) => (
+        <Link
+          to={`/event/${event._id}`}
+          key={event._id}
+          className="past-event-card-link"
+        >
+          <div className="past-event-card">
+            <img src={event.image} alt={event.title} className="past-event-image" />
+            <div className="past-event-info">
+              <h3>{event.title}</h3>
+              <p>{new Date(event.date).toLocaleDateString()}</p>
+              <p className="past-event-description">{event.description}</p>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
+  ) : (
+    <div className="no-past-events-message">
+      <p>No past events.</p>
+    </div>
+  )}
+</div>
+    </div>
+    
   );
 };
 

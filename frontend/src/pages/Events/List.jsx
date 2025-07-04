@@ -1,3 +1,5 @@
+// This file is the List component for displaying events in a list format.
+// It shows the event date, title, description, and tasks with completion status.
 import React from 'react';
 import './Events.css';
 import { FiCheckSquare, FiSquare } from 'react-icons/fi';
