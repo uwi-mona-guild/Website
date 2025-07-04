@@ -1,3 +1,6 @@
+// This file is part of the frontend/src/pages/Events directory
+// It handles the display of individual event posts, showing details like date, title, description, and tasks with completion status.
+// It also includes a close button to exit the event view.
 import React from 'react';
 import { FiX, FiCheckSquare, FiSquare } from 'react-icons/fi';
 import './Events.css';

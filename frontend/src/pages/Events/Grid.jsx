@@ -1,3 +1,6 @@
+// This file is part of the frontend/src/pages/Events directory
+// It handles the display of events in a calendar format, allowing users to view events by month
+
 import React from 'react';
 import './Events.css';
 import { Link } from 'react-router-dom';

@@ -1,3 +1,5 @@
+// This file is part of the frontend/src/pages/Events directory
+// It handles the display of events in a calendar format, allowing users to view events by month
 import React, { useState, useEffect } from 'react';
 import './Events.css';
 import { Link } from 'react-router-dom';
@@ -11,7 +13,7 @@ const Events = () => {
   const [events, setEvents] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [viewMode, setViewMode] = useState('grid');
-
+  //Handle the view mode state
   useEffect(() => {
     const fetchEvents = async () => {
       const month = currentDate.getMonth() + 1;
@@ -21,19 +23,19 @@ const Events = () => {
     };
     fetchEvents();
   }, [currentDate]);
-
+  // Fetch events whenever currentDate changes
   const handleDateClick = (day) => {
     const clickedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
     setSelectedDate(clickedDate);
   };
-
+// Handle date click to set selected date
   const changeMonth = (offset) => {
     const newDate = new Date(currentDate);
     newDate.setMonth(newDate.getMonth() + offset);
     setCurrentDate(new Date(newDate));
     setSelectedDate(null);
   };
-
+// Function to change the month displayed in the calendar
   const today = new Date();
   const pastEvents = events.filter(e => new Date(e.date) < today); // Filter past events
 

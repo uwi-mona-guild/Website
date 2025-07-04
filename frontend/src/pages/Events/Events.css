@@ -1,4 +1,7 @@
-/* Replace the entire CSS with this: */
+/* css file for Events page */
+/* This file contains styles for the Events page, including calendar and list views, event cards,
+    breadcrumb navigation, and responsive design elements. It uses CSS variables for color themes and includes styles for hover effects, transitions, and layout structures.
+  */
 :root {
   --maroon: #7A0019;
   --gold: #FFCC33;
