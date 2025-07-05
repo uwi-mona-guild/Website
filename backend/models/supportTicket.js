@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 const supportSchema = new mongoose.Schema(
 	{
+		type: { type: String, required: [true, "Invalid missing ticket type"] },
+		studentId: { type: Number },
 		status: {
 			type: String,
 			enum: {
@@ -15,7 +17,7 @@ const supportSchema = new mongoose.Schema(
 			enum: {
 				values: ["low", "medium", "high", "urgent"],
 				message: "Invalid ticket priority provided",
-			}, 
+			},
 			default: "low",
 		},
 		title: {
