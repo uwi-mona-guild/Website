@@ -1,0 +1,41 @@
+/* Taken from the long index css file*/
+body{
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6; 
+}
+
+.main-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .folder-tab{
+    background-color: #7b0000;
+    border: 2px solid #b81007ec;
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+    border-radius: 2rem;
+    position: relative;
+    padding: 20px;
+    color: #f0f0f0;
+    overflow: hidden;
+    clip-path: polygon(0 20px, 20px 0, 900px 0, 920px 40px, 100% 40px, 100% 100%, 0 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.folder-tab {
+  height: 500px; 
+  padding: 40px 20px;
+} 
+  
+
+
+*/

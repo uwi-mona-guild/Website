@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import * as Frame from './components/Frame';
@@ -10,16 +9,14 @@ const App = () => {
   return (
     <Router>
       <div className='App'>
-        {/* <Frame.Navbar /> */}
-        <Routes>
-          {/* Routes WITH Layout (Navbar + Footer) */}
-          <Route element={<Frame.Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/events" element={<Events />} />
-          </Route>
-        </Routes>
-        {/* <Frame.Footer /> */}
+        <Frame.Navbar /> 
+        {/* Changed from <Frame.Layout /> because the outlet, and hence routes with page content, wasn't loading */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/events" element={<Events />} />
+          </Routes>
+        <Frame.Footer />
       </div>
     </Router>
   );

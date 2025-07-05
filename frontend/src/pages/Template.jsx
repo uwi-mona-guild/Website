@@ -1,4 +1,6 @@
 import React from 'react'
+import * as assets from '../../assets';
+// import styles from './Template.module.css
 
 const Template = () => {
   return (

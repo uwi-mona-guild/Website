@@ -1,9 +1,12 @@
-import React from 'react';
+import * as assets from '../../assets';
 
 const Home = () => {
   return (
     <div className="main-container">
-      <div className="search">
+      <div>
+        <img src={assets.hero_section_icon} alt='hero-section-icon'/>
+      </div>
+      {/* <div className="search">
         <input type="text" name="search" placeholder="Search..." />
 
       </div>
@@ -13,7 +16,7 @@ const Home = () => {
               <p>Lorem ipsum dolor sit amet.</p>
                   <button>See more</button>
           </div>
-      </div>
+      </div> */}
     </div>
   )
 }

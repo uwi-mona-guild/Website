@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from '../../assets/uwi-mona-guild-banner.png';
+// import React, {useEffect, useRef, useState} from 'react';
 import * as assets from '../../assets';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="logo">
-        <a href="/">
-          <img src={assets.banner} alt="Guild Banner" />
+    <nav className={styles.navbar}>
+      <div>
+        <a href='/'>
+          <img className={styles.logo_image} src={assets.guild_web_logo} alt="UWI Mona Guild Logo" />
         </a>
-        <div className="navbar__toggle" id="mobile-menu">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-        </div>
       </div>
-      <ul className="nav-links">
-        <li className="active">Home</li>
-        <li>The Guild Council</li>
-        <li>Events</li>
-        <li>News & Updates</li>
+        {/* Mobile view. Commented out temporarily */}
+        {/* <div className="navbar__toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+        </div> */}
+      <ul className={styles.nav_links}>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/exec'>The Guild Council</a></li>
+        <li><a href='/events'>Events</a></li>
+        <li><a href='/advisories'>Advisories</a></li>
       </ul>
     </nav>
   );
