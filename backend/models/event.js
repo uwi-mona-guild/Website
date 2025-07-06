@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const eventSchema = new mongoose.Schema({
   title: { type: String, required: true },
   date: { type: Date, required: true },
-  location: { type: String, required: true },
+  time: {type: Date},
+  location: { type: String, required: true, default: "TBA" },
   description: { type: String },
   price: {
     amount: { type: Number }, // Optional, event can be free if not set
