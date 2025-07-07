@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  date: { type: Date, required: true },
-  time: {type: Date},
+  date: { type: Date, required: true }, // Will include date and time (if a time is given)
   location: { type: String, required: true, default: "TBA" },
   description: { type: String },
   price: {
