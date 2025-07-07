@@ -22,8 +22,13 @@ const createEvent = async (req, res) => {
   }
 };
 
+const getEvent = async (req, res) => {
+  
+}
+
 
 module.exports = {
   getAllEvents,
   createEvent,
+  getEvent,
 }
