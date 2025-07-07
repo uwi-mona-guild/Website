@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowUp,FaFacebookF, FaInstagram, FaYoutube, FaGlobe, FaTiktok } from 'react-icons/fa'; 
 import { FaXTwitter, } from 'react-icons/fa6';
-import '../../index.css';
+
+import './Footer.css'; 
+import { guild_logo } from '../../assets';
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +53,7 @@ const Footer = () => {
               <FaEnvelope className="contact-icon" />
               <div>
                 <p><strong>EMAIL</strong></p>
-                <p>uwimonaguild@gmial.com</p>
+                <p>uwimonaguildweb@gmail.com</p>
               </div>
             </div>
           </div>
@@ -82,7 +84,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="copyright-section">
-        <p>© {new Date().getFullYear()} UWI Mona Guild. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} The UWI Mona Guild. All Rights Reserved.</p>
       </div>
 
       {/* Scroll To Top Button */}

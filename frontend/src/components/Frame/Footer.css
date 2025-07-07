@@ -1,41 +1,11 @@
-/* index.css */
-@import "tailwindcss";
-@import './styles/styles.css';
+/* All taken from the original index css file on the frontend branch
+ - Should be changed to a module css file (so that the styles and their names are local not global)
+   and the matching jsx should change to use the module.css
+ - Also change it to use variables from the styles css for colors.
+   Any desired colours should be declared in styles css first
+*/
 
-/* Global Reset */
-* {
-  font-family: var(--font-default);
-  color: var(--color-primary);
-  background-color: inherit;
-  
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  
-  scrollbar-width: none;
-}
-
-h1, h2, h3 {
-  font-family: var(--font-heading-primary);
-}
-
-h1.fancy {
-  font-family: var(--font-heading-secondary);
-}
-
-button {
-    cursor: pointer;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-}
-
-button:hover {
-    background-color: var(--color-secondary);
-    color: var(--dark-red-accent);
-}
-
-/* Footer Styles */
-
+/* Footer styles */
 .footer-container {
     background-color: #0f0f0f;
     color: #fff;
@@ -51,6 +21,7 @@ button:hover {
     transform: translateY(0);
     opacity: 1;
 } 
+
 .social-media-bar {
     display: flex;
     width: 100%;
@@ -59,7 +30,7 @@ button:hover {
 
 .social-icons {
     display: flex;
-    color: var(--color-secomdary);
+    color: var(--color-secondary);
     width: 100%;
 }
 
@@ -91,7 +62,6 @@ button:hover {
     fill: inherit;
     transform: scale(1.01);
 }
-
 
 .footer-logo-section {
     display: flex;
@@ -177,7 +147,6 @@ button:hover {
   font-size: 0.9rem;
   color: #aaa;
 }
-
 
 .back-to-top {
     position: fixed;

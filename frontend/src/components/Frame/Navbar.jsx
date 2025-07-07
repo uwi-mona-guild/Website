@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react';
+// import React, {useEffect, useRef, useState} from 'react';
 import * as assets from '../../assets';
-import './Components.css'
-
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
 
@@ -25,22 +24,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);}, []);
 */
   return (
-    <nav className="navbar">
-      <div className="logo">
-        <a href="/">
-          <img className="logo-image" src={assets.logo} alt="Guild logo" />
+    <nav className={styles.navbar}>
+      <div>
+        <a href='/'>
+          <img className={styles.logo_image} src={assets.guild_web_logo} alt="UWI Mona Guild Logo" />
         </a>
-        <div className="navbar__toggle" id="mobile-menu">
-                <span className="bar"></span>a
-                <span className="bar"></span>
-                <span className="bar"></span>
-        </div>
       </div>
-      <ul className="nav-links">
-        <li className="active">Home</li>
-        <li>The Guild Council</li>
-        <li>Events</li>
-        <li>News & Updates</li>
+        {/* Mobile view. Commented out temporarily */}
+        {/* <div className="navbar__toggle" id="mobile-menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+        </div> */}
+      <ul className={styles.nav_links}>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/'>The Guild Council</a></li>
+        <li><a href='/events'>Events</a></li>
+        <li><a href='/'>Advisories</a></li>
       </ul>
     </nav>
   );
