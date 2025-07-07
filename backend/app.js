@@ -17,7 +17,7 @@ mongoose.connect(DB).then(() => {
 });
 
 // Import the routes here
-const eventsRoutes = require('./routes/events');
+const eventsRoutes = require('./routes/eventsRoute');
 
 // Use the routes here
 app.use('/api/events', eventsRoutes); // Register the events routes

@@ -1,5 +1,5 @@
 // filepath: backend/controllers/eventsController.js
-const Event = require('../models/event'); // adjust path as needed
+const Event = require('../models/eventsModel'); // adjust path as needed
 
 // Get all events
 const getAllEvents = async (req, res) => {
