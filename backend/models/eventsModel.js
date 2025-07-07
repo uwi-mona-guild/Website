@@ -6,7 +6,7 @@ const eventSchema = new mongoose.Schema({
   location: { type: String, required: true, default: "TBA" },
   description: { type: String },
   price: {
-    amount: { type: Number }, // Optional, event can be free if not set
+    amount: { type: Number, default: 0 }, // Optional, event can be free if not set
     currency: { type: String, enum: ['JMD', 'USD'], default: 'JMD' } // Optional, defaults to JMD
   },
   createdAt: { type: Date, default: Date.now }
