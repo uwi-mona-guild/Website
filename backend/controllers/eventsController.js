@@ -23,12 +23,53 @@ const createEvent = async (req, res) => {
 };
 
 const getEvent = async (req, res) => {
-  
-}
+	try {
+		const { id } = req.params;
+		const event = await Event.findById(id);
+		if (!event) {
+			return res.status(404).send("Event not found");
+		}
+		res.status(200).json({ event });
+	} catch (error) {
+		res.status(500).send(error.message);
+	}
+};
 
+const updateEvent = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const event = await Event.findByIdAndUpdate(id, req.body);
+		if (!event) {
+			return res.status(404).send("Event not found");
+		}
+		const updated = await Event.findById(id);
+		if (updated) {
+			res.status(201).send("Event updated sucessfully")  
+		}else{
+			throw new Error("Failed to create update event");
+		}	
+	} catch (error) {
+		res.status(500).send(error.message);
+	}
+};
+
+const deleteEvent = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const event = await Event.findByIdAndDelete(id, req.body);
+		if (!event) {
+			return res.status(404).send("Event not found");
+		}
+		res.status(200).send("Delete sucessful");
+	} catch (error) {
+		res.status(500).send(error.message);
+	}
+};
 
 module.exports = {
-  getAllEvents,
-  createEvent,
-  getEvent,
-}
+	getAllEvents,
+	createEvent,
+	getEvent,
+	updateEvent,
+	deleteEvent,
+};
