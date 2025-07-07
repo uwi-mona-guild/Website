@@ -1,8 +1,8 @@
-const { regular_data } = require("../mock_data/events");
+const { regular_data } = require("../mock_data/eventsMockData");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const DB = process.env.DATABASE_URL;
-const Event = require("../models/event"); // adjust path as needed
+const Event = require("../models/eventsModel"); // adjust path as needed
 const mongoose = require("mongoose");
 
 //TODO: set up command line args and link to functions for more models later
