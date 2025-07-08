@@ -1,12 +1,13 @@
 // This file is part of the frontend/src/pages/Events directory
 // It handles the display of events in a calendar format, allowing users to view events by month
 import React, { useState, useEffect } from 'react';
-import './Events.css';
+import styles from './Events.module.css';
 import { Link } from 'react-router-dom';
 import Grid from './Grid';
 import List from './List';
 import EventCard from './EventPost';
 import { FiGrid, FiList, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import * as assets from '../../assets';
 
 const Events = () => {
   const [currentDate, setCurrentDate] = useState(new Date()); // Initialize with current date
@@ -41,7 +42,9 @@ const Events = () => {
 
   return (
     <div className="events-container">
-
+        {/*<div className='bkg-image'>
+          <img src={assets.pelican} alt="Pelican" />
+        </div>*/}
 <div className="calendar-top-header">
   <div className="calendar-title-container">
     <h2 className="calendar-title">

@@ -10,7 +10,7 @@
   --border-radius: 15px;
 }
 
-.events-container {
+.events_container {
   font-family: 'Segoe UI', sans-serif;
   padding: 2rem;
   background: white;
@@ -492,3 +492,12 @@
   color: #777;
   font-size: 13px;
 }
+/*.bkg-image {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+    background-color: #111;
+}*/
