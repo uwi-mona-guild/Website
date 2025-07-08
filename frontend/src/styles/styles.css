@@ -1,0 +1,25 @@
+/* styles.css */
+/* Scheme given by the Graphics Designers */
+
+:root { 
+  /* Typography to use across website display */
+  --font-default: 'Canva Sans', 'Poppings', sans-serif; 
+  --font-heading-primary: 'League Spartan', sans-serif;
+  --font-heading-fancy: 'Luxurious Script', cursive;
+
+  /* Colours used across the website */
+  --color-primary: #810302;
+  --color-secondary: #FFFFFF;
+  
+  --dark-red-accent: #480e08;
+  --light-red-accent: #bd3231;
+  --christoff-red: #b30000;
+  --logo-blue: #2069e9;
+  --logo-yellow: #f7d40f;
+
+  --custom-black: black;    /* Can be changed to just a dark near black colour*/
+  --dark-bg: #000000;
+
+  /* need to add spacing sizes (like spacing-xs: 4)*/
+  /* also need to add a border radius */
+}

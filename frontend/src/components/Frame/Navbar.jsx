@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <a href="/">
-          <img className={styles.logo_image} src={assets.logo} alt="Guild logo" />
+          <img className={styles.logo_image} src={assets.guild_logo} alt="Guild logo" />
         </a>
       </div>
       

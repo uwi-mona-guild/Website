@@ -1,9 +1,6 @@
-import React from 'react';
-import '../../index.css';
+import React, { useEffect,useState } from 'react';
 import * as assets from '../../assets';
-import { useEffect,useState } from 'react';
-
-
+import styles from './Home.module.css';
 
 const Home = () => {
   // Slider functionality

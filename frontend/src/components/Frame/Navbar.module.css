@@ -1,7 +1,191 @@
-@import "tailwindcss";
+/* Navbar.module.css - Custom styles for NavBar */
+/* Imported from index.css, converted to module.css to be local*/
+/* Module css can't use - easily, only _ */
 
-/* NavBar */
 .logo_image{
-    width: 80px;
-    height: 80px;
+    height: 50px;
+    width: 120px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #7b0000;
+
+    margin-bottom: 2rem;
+    
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li{
+    position: relative;
+    cursor: pointer;
+    font-weight: 1000;
+    color: #f0f0f0;
+    right:400px
+    
+}
+
+.nav-links li:hover{
+    color: #b81007ec;
+    transition: all 0.3s ease;
+}
+
+.nav-links li.active {
+  color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  background: #421879;
+  outline: 2px solid lime;
+  border-radius: 5rem;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 3px;
+}
+
+.logo{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    top: 10px;
+    left: 20px;
+  
+
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    right: 75px;
+    z-index: 10;
+}
+
+.search input{
+    border: 2px solid #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    clip-path: calc(100% - 20px) polygon(0 10px, 5% 0, 30% 0, 32% 10px, 100% 10px, 100% 100%, 0 100%);
+    transition: border-color 0.3s ease;
+}
+
+.navbar__toggle {
+        display: none;
+    }
+
+@media screen and (max-width: 960px) {
+    .search {
+    display: none;
+  }
+    .main-container{
+        padding: 10px;
+        max-width: 100%;
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .folder-tab{
+        padding: 2rem;
+        clip-path: polygon(0 10px, 5% 0, 60% 0, 62% 20px, 100% 20px, 100% 100%, 0 100%);
+        height: 400px; 
+        top: 10px;
+        margin-top: 120px; 
+    }
+    
+
+   .navbar {
+    position: relative;
+    z-index: 1500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #7b0000;
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 2000;
+    border-radius: 0 0 1rem 1rem;
+    list-style: none;
+    }
+
+    .nav-links.active {
+      display: flex !important;
+      }
+
+    .nav-links li {
+      display: block;
+      padding: 1rem;
+      color: white;
+      background: pink;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 2px solid #fff;
+      margin-bottom: 0.5rem;
+    }
+    .nav-links li {
+      all: unset;
+      display: block;
+      color: white;
+      padding: 0.5rem 1rem;
+    }
+
+    .mobile-search {
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+      border: 2px solid #fff;
+      width: 100%;
+      color: #000;
+    }
+
+
+  .navbar__toggle {
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 1100;
+    
+  }
+
+  .navbar__toggle .bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 6px auto;
+    background: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(2) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(3) {
+    opacity: 0;
+  }
+
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaArrowUp,FaFacebookF, FaInstagram, FaYoutube, FaGlobe, FaTiktok } from 'react-icons/fa'; 
 import { FaXTwitter, } from 'react-icons/fa6';
-import '../../index.css';
+import styles from './Footer.module.css';
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
