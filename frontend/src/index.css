@@ -24,6 +24,7 @@
   font-family: var(--font-default);
   color: var(--color-primary);
   background-color: var(--color-secondary);
+  scrollbar-width: none;
 }
 
 h1, h2, h3 {
@@ -99,7 +100,7 @@ body{
     width: 100%;
     padding: 10px 20px;
     background-color: #7b0000;
-    border-radius: 2rem;
+
     margin-bottom: 2rem;
     
 }
@@ -133,8 +134,6 @@ body{
 }
 
 .logo{
-    width: 20%;
-    height: 50%; 
     display: flex;
     align-items: left;
     justify-content: left;
@@ -158,7 +157,7 @@ body{
 }
 
 .search input{
-    border: 2px solid #7b0000;
+    border: 2px solid #000000;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     width: 200px;
@@ -310,4 +309,228 @@ body{
         opacity: 0;
     }
 
+}
+
+/* Footer Styles */
+
+.footer-container {
+    background-color: #0f0f0f;
+    color: #fff;
+    font-family: var(--font-default);
+    position: relative;
+    padding: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 2.5s ease, opacity 1s ease;
+}
+
+.footer-container.float-in {
+    transform: translateY(0);
+    opacity: 1;
+} 
+.social-media-bar {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.social-icons {
+    display: flex;
+    color: var(--color-secomdary);
+    width: 100%;
+}
+
+.social-icons a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+/* Alternating red shades for background */
+.social-icons a:nth-child(odd) {
+    background-color: #a4161a;
+    fill: inherit;
+}
+
+.social-icons a:nth-child(even) {
+    background-color: #ba181b;
+    fill: inherit;
+}
+
+.social-icons a:hover {
+    background-color: white;
+    color: var(--color-primary);
+    fill: inherit;
+    transform: scale(1.01);
+}
+
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.footer-logo {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+
+.footer-contact-section {
+    text-align: center;
+    font: var(--font-heading-primary);
+    padding: 20px 30px 40px;
+}
+
+.footer-contact-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-contact-section > p.footer-description {
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+.footer-contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    max-width: 220px;
+}
+
+.contact-item p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.contact-icon {
+    font-size: 1.6rem;  
+    color: var(--color-secomdary);
+}
+
+.footer-map-container {
+    width: 100%;
+}
+
+.footer-map {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+.copyright-section {
+  background-color: #111;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-secomdary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.back-to-top svg {
+  color: white;
+  fill: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-contact-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .social-icons {
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .social-icons a {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .footer-logo {
+    max-width: 140px;
+  }
+
+  .footer-description {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .footer-map {
+    height: 250px;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }

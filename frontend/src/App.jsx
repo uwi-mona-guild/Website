@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import * as Frame from './components/Frame';
 import { Home, Support, Events } from './pages';
 
