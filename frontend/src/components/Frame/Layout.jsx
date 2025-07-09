@@ -10,7 +10,9 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <div style={{ backgroundColor: 'var(--default-red)' }}>
+        <Footer />
+      </div>
     </>
   );
 };

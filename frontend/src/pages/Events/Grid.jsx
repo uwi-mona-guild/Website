@@ -2,7 +2,7 @@
 // It handles the display of events in a calendar format, allowing users to view events by month
 
 import React from 'react';
-import styles from './Events.module.css';
+import styles from './Events.module.scss';
 import { Link } from 'react-router-dom';
 
 

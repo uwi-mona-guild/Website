@@ -3,7 +3,7 @@
 // It also includes a close button to exit the event view.
 import React from 'react';
 import { FiX, FiCheckSquare, FiSquare } from 'react-icons/fi';
-import styles from './Events.module.css';
+import styles from './Events.module.scss';
 
 const EventPost = ({ date, events, onClose }) => {
   return (

@@ -1,8 +1,8 @@
-/* Events.module.css - Custom styles for Events Page */
-/* Imported from index.css, converted to module.css to be local*/
-/* Module css can't use - easily, only _ */
+/* Events.module.scss - Custom styles for Events Page */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
 /* This file contains styles for the Events page, including calendar and list views, event cards,
-    breadcrumb navigation, and responsive design elements. It uses CSS variables for color themes and includes styles for hover effects, transitions, and layout structures.
+    breadcrumb navigation, and responsive design elements. It uses scss variables for color themes and includes styles for hover effects, transitions, and layout structures.
   */
 :root {
   --maroon: #7A0019;

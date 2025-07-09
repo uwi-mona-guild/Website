@@ -1,2 +1,4 @@
-/* Template.module.css - Custom styles for Template Page */
-/* Converted to module.css to be local. Module css can't use - easily, only _ */
+/* Template.module.scss - Custom styles for Template Page */
+/* Converted to module.scss to be local. Module scss can't use - easily, only _ . Use camelCase*/
+
+@import '../../styles/styles.scss';

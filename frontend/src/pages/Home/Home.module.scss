@@ -1,13 +1,6 @@
-/* Home.module.css - Custom styles for Homepage */
-/* Imported from index.css, converted to module.css to be local*/
-/* Module css can't use - easily, only _*/
-
-body{
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6; 
-}
-
+/* Home.module.scss - Custom styles for Homepage */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
 
 .main-container{
     max-width: 1200px;
@@ -17,6 +10,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    line-height: 0;
 }
 
 .folder-tab{
@@ -214,6 +208,21 @@ main__btn:hover:after{
     margin-bottom: 3rem;
     text-align: center;
   }
+    // .main-container{
+    //     padding: 10px;
+    //     max-width: 100%;
+    //     flex-direction: column; 
+    //     align-items: center;
+    // }  
+  
+    // .folder-tab{
+    //     padding: 2rem;
+    //     clip-path: polygon(0 10px, 5% 0, 60% 0, 62% 20px, 100% 20px, 100% 100%, 0 100%);
+    //     height: 400px; 
+    //     top: 10px;
+    //     margin-top: 120px; 
+    // }
+    
 
   .main__content h1 {
     font-size: 1.2rem;
@@ -478,7 +487,7 @@ main__btn:hover:after{
 }
 
 .red-section {
-  background-color: #7b0000;
+  background-color: var(--darker-red-accent);
   height: 200px;
   width: 1300px;
   margin-top: -5px; 

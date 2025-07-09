@@ -1,0 +1,256 @@
+/* Footer.module.scss - Custom styles for Footer */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+
+@import '../../styles/styles.scss';
+
+.footerContainer {
+  background: linear-gradient(
+    to bottom,
+    var(--default-red) 5%,
+    var(--darker-red-accent) 95%
+  );
+  font-family: var(--font-default);
+  position: relative;
+  padding: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  line-height: 0;
+  transition: transform 2.5s ease, opacity 2.5s ease;
+}
+
+.floatIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Social Media Bar */
+.socialMediaBar {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.socialIcons {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  gap: 1.5%;
+}
+
+.socialIcons a {
+  /* background-color: var(--dark-red-accent);
+  outline-color: var(--darker-red-accent); */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  outline-style: outset;
+  outline-width: 3px;
+  margin-inline: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out, outline-color 0.3s ease-in-out;
+}
+
+.socialIcons a * {
+  color: var(--off-white); /* icon color always white */
+  background-color: transparent;
+}
+
+/* Alternating red shades for background */
+.socialIcons a:nth-child(odd) {
+  background-color: var(--dark-red-accent);
+  outline-color: var(--darker-red-accent);
+}
+
+.socialIcons a:nth-child(even) {
+  background-color: var(--default-red);
+  outline-color: var(--light-red-accent);
+}
+
+/* On hover: background becomes white, icon becomes red */
+.socialIcons a:hover {
+  background-color: var(--off-white); /* always inverse of icon color */
+  outline-color: var(--light-red-accent);
+  transform: scale(1.09);
+}
+
+.socialIcons a:hover * {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+/* Not In Use */
+/* .footerLogoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px 20px;
+} */
+
+/* .footerLogo {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 20px;
+} */
+
+/* .footerDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+} */
+
+/* Contact Section */
+.footerContactSection {
+  text-align: center;
+  padding: 20px 30px 40px;
+}
+
+.footerContactSection h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--off-white);
+}
+
+/* .footerContactSection > p.footerDescription {
+  max-width: 600px;
+  margin-bottom: 30px;
+} */
+
+.footerContactGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: $med-bp-width; /* */
+  margin: 0 auto;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  max-width: calc($med-bp-width/2); /* half of the maximum contact grid width */
+}
+
+.contactItem * {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--off-white);
+}
+
+.contactIcon {
+  font-size: 1.6rem;
+  width: 1.6rem;
+  color: var(--off-white);
+}
+
+/* Map Container */
+.mapContainer {
+  width: 100%;
+}
+
+.footerMap {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* Copyright Section */
+.copyrightSection {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.copyrightSection * {
+  color: var(--red-grey);
+  font-size: 0.9rem;
+}
+
+/* Back to the Top Icon */
+.backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--off-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.backToTop:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.backToTop svg {
+  color: var(--off-white);
+  fill: var(--off-white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footerContent {
+    text-align: center;
+  }
+
+  .footerContactGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .contactItem {
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .socialIcons {
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .socialIcons a {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  // .footerLogo {
+  //   max-width: 140px;
+  // }
+
+  // .footerDescription {
+  //   font-size: 0.85rem;
+  //   max-width: 100%;
+  // }
+
+  .footerMap {
+    height: 250px;
+  }
+
+  .backToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+

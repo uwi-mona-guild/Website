@@ -1,10 +1,10 @@
-/* index.css - Global default styles*/
+/* index.scss - Global default styles*/
 
-/* All style variables are declared in styles.css
+/* All style variables are declared in styles.scss
  * This file simply sets the global defaults using the 
- * styles declared in the styles.css file */
+ * styles declared in the styles.scss file */
 
-@import './styles/styles.css';
+@import './styles/styles.scss';
 @import "tailwindcss";
 
 /* Global Reset */
@@ -16,18 +16,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  line-height: 1.6;
   
   /* scrollbar-width: none; */ 
   /* Commented out for later discussion */
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading-primary);
 }
 
 h1.fancy {
   font-family: var(--font-heading-secondary);
 }
+
+
 
 button {
   cursor: pointer;
