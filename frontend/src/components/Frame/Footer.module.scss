@@ -15,7 +15,6 @@
   padding: 0;
   transform: translateY(100%);
   opacity: 0;
-  line-height: 0;
   transition: transform 2.5s ease, opacity 2.5s ease;
 }
 
@@ -128,7 +127,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
-  max-width: $med-bp-width; /* */
+  max-width: $md-bp-width; /* */
   margin: 0 auto;
 }
 
@@ -137,7 +136,7 @@
   align-items: center;
   gap: 15px;
   text-align: left;
-  max-width: calc($med-bp-width/2); /* half of the maximum contact grid width */
+  max-width: calc($md-bp-width/2); /* half of the maximum contact grid width */
 }
 
 .contactItem * {
@@ -170,7 +169,7 @@
 }
 
 .copyrightSection * {
-  color: var(--red-grey);
+  color: var(--red-gray);
   font-size: 0.9rem;
 }
 
@@ -206,7 +205,7 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: $md-bp-width) {
   .footerContent {
     text-align: center;
   }

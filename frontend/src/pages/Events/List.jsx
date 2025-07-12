@@ -1,15 +1,15 @@
 // This file is the List component for displaying events in a list format.
 // It shows the event date, title, description, and tasks with completion status.
 import React from 'react';
-import styles from './Events.module.scss';
 import { FiCheckSquare, FiSquare } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import listStyles from './List.module.scss';
 
 const List = ({ events }) => {
-  if (!events.length) return <p className="no-events">No events this month.</p>;
+  if (!events.length) return <p className={listStyles.noEvents}>No events this month.</p>;
 
   return (
-    <div className="event-list-container">
+    <div className={listStyles.container}>
       {events.map((event) => {
         const eventDate = new Date(event.date);
         const day = eventDate.getDate();
@@ -17,31 +17,31 @@ const List = ({ events }) => {
         
         return (
             
-          <div key={event._id} className="event-list-item">
-            <div className="breadcrumb">
+          <div key={event._id} className={listStyles.item}>
+            <div className={listStyles.breadcrumb}>
             <Link to="/events">Events</Link>
             <span>•</span>
             <span className="text-blue-800">List</span>
                 </div>
-            <div className="event-date">
-              <span className="event-day">{day}</span>
-              <span className="event-weekday">{weekday}</span>
+            <div className={listStyles.eventDate}>
+              <span className={listStyles.eventDay}>{day}</span>
+              <span className={listStyles.eventWeekday}>{weekday}</span>
             </div>
             
-            <div className="event-content">
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-description">{event.description}</p>
+            <div className={listStyles.eventContent}>
+              <h3 className={listStyles.eventTitle}>{event.title}</h3>
+              <p className={listStyles.eventDescription}>{event.description}</p>
               
-              <div className="event-tasks">
+              <div className={listStyles.eventTasks}>
                 {event.tasks?.map((task, index) => (
-                  <div key={index} className="task-item">
+                  <div key={index} className={listStyles.taskItem}>
                     {task.completed ? (
-                      <FiCheckSquare className="task-icon completed" />
+                      <FiCheckSquare className={`${listStyles.taskIcon} ${listStyles.completed}`} />
                     ) : (
-                      <FiSquare className="task-icon" />
+                      <FiSquare className={listStyles.taskIcon} />
                     )}
-                    <span className="task-time">{task.time}</span>
-                    <span className="task-text">{task.text}</span>
+                    <span className={listStyles.taskTime}>{task.time}</span>
+                    <span className={listStyles.taskText}>{task.text}</span>
                   </div>
                 ))}
               </div>

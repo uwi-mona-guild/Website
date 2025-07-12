@@ -1,0 +1,260 @@
+/* Hore.module.scss - Custom styles for hero section in Homepage */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+
+@import '../../styles/styles.scss';
+
+/* Hero Section / Folder Frame Section */
+.folderFrame{
+    background-color: transparent;
+    background-image: url('../../assets/folder-icon.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    aspect-ratio: calc(673/371); // Folder image is 673px x 371px
+    max-width: $lg-bp-width;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.folderOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+
+    opacity: 0.9;
+    mix-blend-mode: hue;
+    
+    animation: fadeIn 1s ease-in-out forwards;
+}
+.folderOverlay2 {
+    opacity: 0.8;
+    mix-blend-mode:darken;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Image slider styles */
+.imgMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  mask-image: url('../../assets/folder-icon.png');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  
+  -webkit-mask-image: url('../../assets/folder-icon.png');
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: all $transitionTime ease;
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.sliderDots {
+    z-index: 2;
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    background-color: transparent;
+}
+
+.dot {
+  display: inline-flex;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  align-self: center;
+  transition: background-color 0.3s linear, height 0.3s ease-in, width 0.3s ease-out;
+}
+
+.dotActive {
+  background-color: var(--color-secondary); 
+  border-color: var(--color-primary);
+  height: 20px;
+  width: 20px;
+}
+
+.welcomeContent{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 25%;
+
+    background-color: transparent;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    h1, h2, p {
+      color: white;
+      font-size: large;
+    }
+    h1 {
+      font-size: 4rem; 
+      font-weight: 700;
+      letter-spacing: -4px;
+      text-shadow: 2px 2px 3px #000;
+      padding: auto;
+    }
+    .greeting {
+      padding-bottom: 3cqw;
+    }
+}
+
+/* Folder Tab - No Longer In Use */
+// .folderTab{
+//     background-color: #7b0000;
+//     border: 2px solid #b81007ec;
+//     width: 100%;
+//     height: 100%;
+//     max-width: 1500px;
+//     border-radius: 2rem;
+//     position: relative;
+//     color: #f0f0f0;
+//     overflow: hidden;
+//     clip-path: polygon(0 30px, 20px 0, 900px 0, 920px 40px, 100% 40px, 100% 100%, 0 100%);
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+//     transition: all 0.3s ease;
+//     height: 500px; 
+//     padding: 40px 20px;
+//     margin-bottom: 4rem;
+// }
+// .gridLayout {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   align-items: center;
+//   gap: 2rem;
+//   margin-bottom: 4rem;
+// }
+
+/* main section */
+// .main__container{
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 0 auto;
+//     height: 70vh;   
+//     background-color: 141414;
+//     z-index: 1;
+//     width: 100%;
+//     max-width: 1300px;
+//     padding: 0 50px;
+//     margin-bottom: 6rem;
+// }
+
+@media (max-width: $md-bp-width) {
+//   .main__container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding: 0 20px;
+//     height: auto;
+//     margin-bottom: 3rem;
+//     text-align: center;
+//   }
+//     .mainContainer{
+//         padding: 10px;
+//         max-width: 100%;
+//         flex-direction: column; 
+//         align-items: center;
+//     }  
+  
+//     .folderTab{
+//         padding: 2rem;
+//         clip-path: polygon(0 10px, 5% 0, 60% 0, 62% 20px, 100% 20px, 100% 100%, 0 100%);
+//         height: 400px; 
+//         top: 10px;
+//         margin-top: 120px; 
+//     }
+
+//   .main__content h1 {
+//     font-size: 1.2rem;
+//     margin-top: 1rem;
+//   }
+
+//   .main__content h2 {
+//     font-size: 1rem;
+//   }
+
+//   .main__content p {
+//     font-size: 1rem;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   .main__btn {
+//     padding: 10px 20px;
+//     font-size: 0.95rem;
+//   }
+
+//   .main__imgContainer {
+//     margin-top: 2rem;
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//   }
+
+  .sliderDots {
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .welcomeContent {
+    * {
+      font-size: 2.5cqw;
+    }
+    h1 {
+      font-size: 6.5cqw;
+      letter-spacing: -0.5cqw;
+    }
+  }
+}
+
+@media (max-width: $sm-bp-width) {
+  .sliderDots {
+    bottom: 6cqw;
+  }
+}

@@ -1,13 +1,14 @@
 // This file is part of the frontend/src/pages/Events directory
 // It handles the display of events in a calendar format, allowing users to view events by month
 import React, { useState, useEffect } from 'react';
-import styles from './Events.module.scss';
 import { Link } from 'react-router-dom';
 import Grid from './Grid';
 import List from './List';
 import EventCard from './EventPost';
 import { FiGrid, FiList, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import * as assets from '../../assets';
+import calendarStyle from './Events.module.scss';
+import pastEventsStyle from './PastEvents.module.scss';
 
 const Events = () => {
   const [currentDate, setCurrentDate] = useState(new Date()); // Initialize with current date
@@ -41,35 +42,35 @@ const Events = () => {
   const pastEvents = events.filter(e => new Date(e.date) < today); // Filter past events
 
   return (
-    <div className="events-container">
-        {/*<div className='bkg-image'>
+    <div className={calendarStyle.overrideContainer}>
+        {/*<div className={calendarStyle.bkgImage}>
           <img src={assets.pelican} alt="Pelican" />
         </div>*/}
-<div className="calendar-top-header">
-  <div className="calendar-title-container">
-    <h2 className="calendar-title">
+<div className={calendarStyle.topHeader}>
+  <div className={calendarStyle.titleContainer}>
+    <h2 className={calendarStyle.title}>
       {currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}
     </h2>
-    <div className="month-navigation">
-      <button onClick={() => changeMonth(-1)} className="nav-button">
+    <div className={calendarStyle.monthNavigation}>
+      <button onClick={() => changeMonth(-1)} className={calendarStyle.overrideButton}>
         <FiChevronLeft size={20} />
       </button>
-      <button onClick={() => changeMonth(1)} className="nav-button">
+      <button onClick={() => changeMonth(1)} className={calendarStyle.overrideButton}>
         <FiChevronRight size={20} />
       </button>
     </div>
   </div>
   {/* Month navigation and View Option */}
-  <div className="view-toggle">
+  <div className={calendarStyle.viewToggle}>
     <button 
       onClick={() => setViewMode('grid')} 
-      className={`view-button ${viewMode === 'grid' ? 'active' : ''}`}
+      className={`${calendarStyle.overrideButton} ${viewMode === 'grid' ? calendarStyle.active : ''}`}
     >
       <FiGrid size={20} />
     </button>
     <button 
       onClick={() => setViewMode('list')} 
-      className={`view-button ${viewMode === 'list' ? 'active' : ''}`}
+      className={`${calendarStyle.overrideButton} ${viewMode === 'list' ? calendarStyle.active : ''}`}
     >
       <FiList size={20} color="white"/>
     </button>
@@ -105,30 +106,30 @@ const Events = () => {
         />
       )}
       {/* PAST EVENTS */}
-      <div className="past-events-wrapper">
-  <h2 className="past-events-heading">PAST EVENTS</h2>
+      <div className={pastEventsStyle.wrapper}>
+  <h2 className={pastEventsStyle.heading}>PAST EVENTS</h2>
 
-  {pastEvents.length > 0 ? (
-    <div className="past-events-list">
+  {pastEventsStyle.length > 0 ? (
+    <div className={pastEventsStyle.list}>
       {pastEvents.map((event) => (
         <Link
           to={`/event/${event._id}`}
           key={event._id}
-          className="past-event-card-link"
+          className={pastEventsStyle.cardLink}
         >
-          <div className="past-event-card">
-            <img src={event.image} alt={event.title} className="past-event-image" />
-            <div className="past-event-info">
+          <div className={pastEventsStyle.card}>
+            <img src={event.image} alt={event.title} className={pastEventsStyle.image} />
+            <div className={pastEventsStyle.info}>
               <h3>{event.title}</h3>
               <p>{new Date(event.date).toLocaleDateString()}</p>
-              <p className="past-event-description">{event.description}</p>
+              <p className={pastEventsStyle.description}>{event.description}</p>
             </div>
           </div>
         </Link>
       ))}
     </div>
   ) : (
-    <div className="no-past-events-message">
+    <div className={pastEventsStyle.noEventsMessage}>
       <p>No past events.</p>
     </div>
   )}

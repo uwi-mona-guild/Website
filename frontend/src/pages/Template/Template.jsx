@@ -5,7 +5,7 @@
 
 const Template = () => {
   return (
-    <div>
+    <div className="pageContainer">  {/* global style */}
       <h1 className="font-bold">Header</h1>
       <p>Content</p>
     </div>

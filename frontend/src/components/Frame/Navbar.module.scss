@@ -2,7 +2,7 @@
 /* Imported from index.scss, converted to module.scss to be local*/
 /* Module scss can't use - easily, only _ . Use camelCase*/
 
-$transitionTime: 0.3s;
+@import '../../styles/styles.scss';
 
 // .logo{
 //     display: flex;
@@ -29,7 +29,6 @@ $transitionTime: 0.3s;
     padding: 10px 20px;
     gap: 20px;
     background-color: var(--color-primary);
-    margin-bottom: 2rem;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -37,6 +36,7 @@ $transitionTime: 0.3s;
     display: flex;
     gap: 20px;
     list-style: none;
+    align-items: center;
 }
 
 // Applies to the React <Link> inside the <li> tag

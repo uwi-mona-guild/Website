@@ -2,8 +2,8 @@
 // It handles the display of events in a calendar format, allowing users to view events by month
 
 import React from 'react';
-import styles from './Events.module.scss';
 import { Link } from 'react-router-dom';
+import gridStyles from './Grid.module.scss';
 
 
 const Grid = ({ year, month, events, onDateClick }) => {
@@ -22,17 +22,17 @@ const Grid = ({ year, month, events, onDateClick }) => {
 
   [...blanks, ...days].forEach((day, i) => {
     if (day === null) {
-      calendarCells.push(<div key={`blank-${i}`} className="calendar-day empty" />);
+      calendarCells.push(<div key={`blank-${i}`} className={gridStyles.empty} />);
     } else {
       const dayEvents = getEventsForDay(day);
       calendarCells.push(
-        <div key={day} className="calendar-day" onClick={() => onDateClick(day)}>
-          <div className="day-number">{day}</div>
+        <div key={day} className={gridStyles.calDay} onClick={() => onDateClick(day)}>
+          <div className={gridStyles.dayNum}>{day}</div>
           {dayEvents.length > 0 && (
             <img
               src={dayEvents[0].image}
               alt="event"
-              className="day-event-thumb"
+              className={gridStyles.dayEventThumb}
             />
           )}
         </div>
@@ -42,9 +42,9 @@ const Grid = ({ year, month, events, onDateClick }) => {
 
   return (
     <div>
-    <div className="calendar-grid-container">
+    <div className={gridStyles.container}>
         
-      <div className="calendar-days-header">
+      <div className={gridStyles.header}>
         {daysOfWeek.map((day) => (
           <div key={day}>{day}</div>
         ))}
