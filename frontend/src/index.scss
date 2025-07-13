@@ -1,0 +1,86 @@
+/* index.scss - Global default styles*/
+
+/* All style variables are declared in styles.scss
+ * This file simply sets the global defaults using the 
+ * styles declared in the styles.scss file */
+
+@import './styles/styles.scss';
+@import "tailwindcss";
+
+/* Global Reset */
+* {
+  font-family: var(--font-default);
+  color: var(--color-primary);
+  background-color: inherit;
+  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  // line-height: 1.6;
+  
+  /* scrollbar-width: none; */ 
+  /* Commented out for later discussion */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-primary);
+}
+
+h1.fancy {
+  font-family: var(--font-heading-secondary);
+}
+
+.pageContainer{
+    // max-width: 1200px;
+    position: relative;
+    padding: 1.5rem;
+    padding-top: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 0;
+    // line-height: 0;
+    // margin: 0 auto;
+
+  &::before {
+    // background: var(--color-secondary); // Gives default background to all child elements
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient( rgb(255, 255, 255) 25%, rgba(0,0,0,0) 100%),
+      url('./assets/abstract-bg-red.png');
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+// .section{
+//   margin: 48px 0px;
+// }
+
+button, .button {
+    // background-image: linear-gradient( to bottom, var(--color-primary) 0%, #000000 100%);
+    background-color: var(--color-secondary);
+    color: var(--color-primary); 
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-width: 2px;
+    border-color: var(--color-primary);
+    border-radius: 99px;
+    transition: color 0.4s ease;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    position: relative;
+}
+
+button:hover, .button:hover{
+    background: linear-gradient( to bottom, var(--color-primary) 0%, #000000 100%);
+    color: var(--color-secondary);
+}

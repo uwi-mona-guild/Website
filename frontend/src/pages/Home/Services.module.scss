@@ -1,0 +1,137 @@
+/* Services.module.scss - Custom styles for services in Homepage */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+
+@import '../../styles/styles.scss';
+
+/*Services Section*/
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    // height: 100vh;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    h1{
+        background-color: var(--color-primary);
+        background-size: auto 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        font-size: 3rem;
+    }
+
+    h2{
+        top: 350px;
+        position: absolute;
+        left: 30px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--color-secondary);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.section h1::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 5px auto 0 auto;
+  margin-bottom: 1rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(17, 17, 17, 0.6) 100%), url('../../assets/uwi-mona-guild-logo.png');
+    background-position: center;
+    width: 400px;
+    height: 525px;
+    margin: 1rem;
+    border-radius: 4px;
+    background-size: cover;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(17, 17, 17, 0.6) 100%), url('../../assets/uwi-mona-guild-logo.png');
+}
+
+.card * {
+    background-color: var(--color-secondary);
+}
+
+.card h2 {
+    color: var(--color-secondary);
+    background-color: transparent;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+}
+
+.card p {
+    position: absolute;
+    bottom: 85px;
+    left: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-secondary); 
+    background-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card button{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 300px; /* Or use 'auto' if you want proportional height */
+  object-fit: cover; /* Makes the image fill the area without distortion */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: $md-bp-width) {
+  .section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .section h1{
+    font-size: 2rem;
+    // margin-bottom: 12rem;
+  }
+}
+
+@media screen and (max-width: $sm-bp-width) {
+  .services h1{
+    font-size: 1.5rem; 
+  }
+
+  .card{
+    width: 300px;
+  }
+}

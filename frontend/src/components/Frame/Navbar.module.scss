@@ -1,0 +1,199 @@
+/* Navbar.module.scss - Custom styles for NavBar */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+
+@import '../../styles/styles.scss';
+
+// .logo{
+//     display: flex;
+//     align-items: left;
+//     justify-content: left;
+//     top: 10px;
+//     left: 20px;
+// }
+
+.logoImage{
+    // Set for visual optimization so it looks decent
+    // even if the page is very zoomed in or out
+    max-height: 40px;
+    max-width: 120px;
+    aspect-ratio: 3;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    gap: 20px;
+    background-color: var(--color-primary);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.navLinks{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+// Applies to the React <Link> inside the <li> tag
+.navLinks li a{
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-secondary);
+    transition: all $transitionTime ease;
+}
+.navLinks li a:hover{
+    background-color: var(--color-secondary);
+    color: var(--dark-red-accent);
+    border-radius: 5rem;
+    padding: 0.5rem;
+    transition: all $transitionTime ease;
+}
+//   Testing purposes
+//   .navLinks li a.active {
+//   color: #f0f0f0;
+//   padding: 0.5rem 1rem;
+//   background: #421879;
+//   outline: 2px solid lime;
+//   border-radius: 5rem;
+//   text-align: center;
+//   margin: 0 auto;
+//   bottom: 3px;
+// }
+
+.searchForm{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    // justify-content: right;
+    // position: absolute;
+    // top: 60px;
+    // right: 200px;
+    // z-index: 10;
+}
+
+.searchInput{
+    border: 2px solid var(--dark-red-accent);
+    outline-style: outset;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    clip-path: calc(100% - 20px) polygon(0 10px, 5% 0, 30% 0, 32% 10px, 100% 10px, 100% 100%, 0 100%);
+    transition: all $transitionTime ease, border-color $transitionTime ease, box-shadow $transitionTime ease;
+
+  &::placeholder {
+    color: var(--dark-red-accent);
+    opacity: 0.5;
+  }
+
+  &:focus{
+    background-color: var(--lighter-red-accent);
+    transition: all $transitionTime ease;
+  }
+  
+  &:focus::placeholder{
+    opacity: 1;
+    transition: all $transitionTime ease;
+  }
+}
+
+// .navbar__toggle {
+//     display: none;
+// }
+
+// @media screen and (max-width: $lg-bp-width) {
+//     .searchForm {
+//     display: none;
+//   }
+
+//    .navbar {
+//     position: relative;
+//     z-index: 1500;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     }
+
+//     .navLinks {
+//     display: none;
+//     flex-direction: column;
+//     background: #7b0000;
+//     width: 100%;
+//     padding: 1rem;
+//     position: absolute;
+//     top: 80px;
+//     right: 0;
+//     z-index: 2000;
+//     border-radius: 0 0 1rem 1rem;
+//     list-style: none;
+//     }
+
+//     .navLinks.active {
+//       display: flex !important;
+//     }
+
+//     .navLinks li a{
+//       display: block;
+//       padding: 1rem;
+//       color: white;
+//       background: pink;
+//       font-weight: bold;
+//       font-size: 1.1rem;
+//       border: 2px solid #fff;
+//       margin-bottom: 0.5rem;
+//     }
+//     .navLinks li a:hover{
+//       all: unset;
+//       display: block;
+//       color: white;
+//       padding: 0.5rem 1rem;
+//     }
+
+//     .mobileSearch {
+//       padding: 0.5rem 1rem;
+//       margin-bottom: 1rem;
+//       border-radius: 20px;
+//       border: 2px solid #fff;
+//       width: 100%;
+//       color: #000;
+//     }
+
+
+//   .navbar__toggle {
+//     display: block;
+//     cursor: pointer;
+//     padding: 20px;
+//     z-index: 1100;
+    
+//   }
+
+//   .navbar__toggle .bar {
+//     display: block;
+//     width: 30px;
+//     height: 4px;
+//     margin: 6px auto;
+//     background: white;
+//     transition: all $transitionTime ease-in-out;
+//   }
+
+//   .navbar__toggle.is-active .bar:nth-child(1) {
+//     transform: translateY(8px) rotate(45deg);
+//   }
+
+//   .navbar__toggle.is-active .bar:nth-child(2) {
+//     transform: translateY(-8px) rotate(-45deg);
+//   }
+
+//   .navbar__toggle.is-active .bar:nth-child(3) {
+//     opacity: 0;
+//   }
+
+// }
