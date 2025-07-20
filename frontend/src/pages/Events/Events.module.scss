@@ -5,7 +5,7 @@
     breadcrumb navigation, and responsive design elements. It uses scss variables for color themes and includes styles for hover effects, transitions, and layout structures.
   */
 
-@import '../../styles/styles.scss';
+@use '../../styles/styles.scss' as *;
 
 :root {
   --maroon: #7A0019;

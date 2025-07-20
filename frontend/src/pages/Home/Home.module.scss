@@ -1,7 +1,7 @@
 /* Home.module.scss - Custom styles for Homepage */
 /* Imported from index.scss, converted to module.scss to be local*/
 /* Module scss can't use - easily, only _ . Use camelCase*/
-@import '../../styles/styles.scss';
+@use '../../styles/styles.scss' as *;
 
 .updateBottomWave {
   width: 100%;

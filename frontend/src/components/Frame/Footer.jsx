@@ -13,7 +13,7 @@ const Footer = () => {
     
     // Show footer when scrolled 100px or when near bottom
     setIsVisible(scrollPosition > 100 || 
-                scrollPosition + windowHeight >= documentHeight - 100);
+                scrollPosition + windowHeight >= documentHeight - 50);
   };
 
   const scrollToTop = () => {

@@ -1,5 +1,6 @@
 /* This file contains styles for the Calendar view of the Events page */
 /* Calendar grid styles */
+@use '../../styles/styles.scss' as *;
 
 .calDay {
   height: 200px;

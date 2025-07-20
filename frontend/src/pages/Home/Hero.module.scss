@@ -2,7 +2,7 @@
 /* Imported from index.scss, converted to module.scss to be local*/
 /* Module scss can't use - easily, only _ . Use camelCase*/
 
-@import '../../styles/styles.scss';
+@use '../../styles/styles.scss' as *;
 
 /* Hero Section / Folder Frame Section */
 .folderFrame{

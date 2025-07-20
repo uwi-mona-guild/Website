@@ -7,35 +7,35 @@ import styles from './Events.module.scss';
 
 const EventPost = ({ date, events, onClose }) => {
   return (
-    <div className="event-card-overlay">
-      <div className="event-card">
-        <div className="event-card-header">
+    <div className={styles.cardOverlay}>
+      <div className={styles.card}>
+        <div className={styles.cardHeader}>
           <h3>
             {date.toLocaleString('default', { month: 'long' })} {date.getDate()}
           </h3>
-          <button onClick={onClose} className="close-button">
+          <button onClick={onClose} className={styles.closeButton}>
             <FiX size={20} />
           </button>
         </div>
 
-        <div className="event-card-content">
+        <div className={styles.eventCardContent}>
           {events && events.length > 0 ? (
             events.map((event) => (
-              <div key={event._id} className="event-card-item">
+              <div key={event._id} className={styles.eventCardItem}>
                 <h4>{event.title}</h4>
                 <p>{event.description}</p>
 
                 {event.tasks?.length > 0 && (
-                  <div className="event-tasks">
+                  <div className={styles.eventTasks}>
                     {event.tasks.map((task, index) => (
-                      <div key={index} className="task-item">
+                      <div key={index} className={styles.taskItem}>
                         {task.completed ? (
-                          <FiCheckSquare className="task-icon completed" />
+                          <FiCheckSquare className={`${styles.taskIcon} ${styles.completed}`} />
                         ) : (
-                          <FiSquare className="task-icon" />
+                          <FiSquare className={styles.taskIcon} />
                         )}
-                        <span className="task-time">{task.time}</span>
-                        <span className="task-text">{task.text}</span>
+                        <span className={styles.taskTime}>{task.time}</span>
+                        <span className={styles.taskText}>{task.text}</span>
                       </div>
                     ))}
                   </div>
@@ -43,7 +43,7 @@ const EventPost = ({ date, events, onClose }) => {
               </div>
             ))
           ) : (
-            <div className="event-card-item">
+            <div className={styles.eventCardItem}>
               <p>No events for this day.</p>
             </div>
           )}

@@ -1,15 +1,30 @@
 // This file is part of the frontend/src/pages/Events directory
 // It handles the display of events in a calendar format, allowing users to view events by month
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import gridStyles from './Grid.module.scss';
 
-
-const Grid = ({ year, month, events, onDateClick }) => {
+const Grid = ({ year, month, onDateClick }) => {
+  const [events, setEvents] = useState([]);
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        // Fetch events from backend, optionally filter by year/month if your backend supports query params
+        const res = await fetch(`/api/events`);
+        if (!res.ok) throw new Error('Failed to fetch events'); //error handling
+        // Assuming the response is an array of events
+        const data = await res.json();
+        setEvents(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchEvents();
+  }, [year, month]); // Refetch when year or month changes
 
   const getEventsForDay = (day) => {
     const dateStr = new Date(year, month, day).toDateString();
@@ -42,15 +57,14 @@ const Grid = ({ year, month, events, onDateClick }) => {
 
   return (
     <div>
-    <div className={gridStyles.container}>
-        
-      <div className={gridStyles.header}>
-        {daysOfWeek.map((day) => (
-          <div key={day}>{day}</div>
-        ))}
+      <div className={gridStyles.container}>
+        <div className={gridStyles.header}>
+          {daysOfWeek.map((day) => (
+            <div key={day}>{day}</div>
+          ))}
+        </div>
+        {calendarCells}
       </div>
-      {calendarCells}
-    </div>
     </div>
   );
 };
