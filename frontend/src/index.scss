@@ -4,8 +4,8 @@
  * This file simply sets the global defaults using the 
  * styles declared in the styles.scss file */
 
-@import './styles/styles.scss';
-@import "tailwindcss";
+@use './styles/styles' as *;
+@import "tailwindcss"; /*there is no tailwind.config.js, so this is just a placeholder, causing a few errors*/
 
 /* Global Reset */
 * {
