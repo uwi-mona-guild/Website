@@ -17,13 +17,13 @@ const getAllEvents = async (req, res) => {
 
 	try {
 		const events = (await Event.find()).filter((event) => {
-			const eventDate = new Date(event.date);
+			const eventDate = new Date(event.start_date);
 			//optional filtering for dates
 			if (afterDate && eventDate < afterDate) return false;
 			if (beforeDate && eventDate > beforeDate) return false;
 			return true;
 		});
-		res.json(events.sort((a, b) => a.date - b.date)); // Sort by date in ascending order
+		res.json(events.sort((a, b) => a.start_date - b.start_date)); // Sort by date in ascending order
 	} catch (err) {
 		res.status(500).json({ error: err.message });
 	}
