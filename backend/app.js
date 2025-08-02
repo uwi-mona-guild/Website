@@ -18,9 +18,11 @@ mongoose.connect(DB).then(() => {
 
 // Import the routes here
 const eventsRoutes = require('./routes/eventsRoute');
+const representativesRoute = require('./routes/representativesRoute');
 
 // Use the routes here
 app.use('/api/events', eventsRoutes); // Register the events routes
+app.use('/api/representatives', representativesRoute); // Register the events routes
 
 // Fallback route for unspecified endpoints
 app.all("/", (req, res) => {
