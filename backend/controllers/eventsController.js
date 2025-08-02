@@ -35,11 +35,11 @@ const createEvent = async (req, res) => {
 		if (Array.isArray(req.body)) { //if multiple
 			const events = req.body
 			await Promise.all(events.map((event) => new Event(event).save()));
-			res.status(201).send("Events updated sucessfully");
+			res.status(201).send("Events added sucessfully");
 		} else {
 			const event = new Event(req.body);
 			await event.save();
-			res.status(201).send("Event updated sucessfully");
+			res.status(201).send("Event added sucessfully");
 		}
 	} catch (err) {
 		res.status(400).json({ error: err.message });
@@ -93,4 +93,7 @@ const deleteEvent = async (req, res) => {
 module.exports = {
   getAllEvents,
   createEvent,
+  getEvent,
+  updateEvent,
+  deleteEvent,
 }
