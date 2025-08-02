@@ -96,5 +96,8 @@ const deleteRepresentative = async (req, res) => {
 module.exports = {
   getAllRepresentatives,
   createRepresentative,
+  getRepresentative,
+  updateRepresentative,
+  deleteRepresentative
 }
 
