@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  date: { type: Date, required: true }, // Will include date and time (if a time is given)
+  start_date: { type: Date, required: true }, // Will include date and time (if a time is given)
+  end_date: {type: Date },
   location: { type: String, required: true, default: "TBA" },
   description: { type: String },
   price: {
