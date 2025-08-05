@@ -1,0 +1,168 @@
+/* Events.module.scss - Custom styles for Events Page */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+/* This file contains styles for the Events page, including calendar and list views, event cards,
+    breadcrumb navigation, and responsive design elements. It uses scss variables for color themes and includes styles for hover effects, transitions, and layout structures.
+  */
+
+@import '../../styles/styles.scss';
+
+:root {
+  --maroon: #7A0019;
+  --gold: #FFCC33;
+  --border-radius: 15px;
+}
+
+.overrideContainer {
+  padding: 2rem;
+  background: white;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.monthNavigation {
+  display: flex;
+  gap: 8px;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 8px;
+}
+
+.overrideButton {
+  background: var(--light-gray);
+  border: none;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  display: flex;
+  transition: all 0.2s;
+}
+
+.active {
+  background: var(--color-primary);
+
+  svg {
+    stroke: white;
+  }
+}
+.overrideButton:hover {
+  background: var(--color-primary);
+  scale: 1.1;
+
+  svg {
+    stroke: white;
+  }
+}
+
+/* Popout card overlay styles */
+.cardOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.card {
+  background: var(--color-secondary);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--gray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+.eventCardContent .eventCardItem {
+  margin-bottom: 1rem;
+}
+
+.eventCardItem {
+h4 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--color-primary);
+}
+p {
+  font-size: 16px;
+  color: var(--gray);
+  text-align: center;
+}
+}
+
+.eventTasks {
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.9); opacity: 0 }
+  100% { transform: scale(1); opacity: 1 }
+}
+
+/*.bkgImage {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+    background-color: #111;
+}*/

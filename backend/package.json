@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --env-file .env app.js",
-    "load": "node --env-file .env utils/load_data.js"
+    "load:events": "node --env-file .env utils/loadEvents.js",
+    "load:representatives": "node --env-file .env utils/loadRepresentatives.js"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,44 @@
+/* styles.scss */
+/* Scheme given by the Graphics Designers */
+
+/* SCSS variable: compile-time only */
+  /* Breakpoint widths for responsive scaling */
+  $sm-bp-width: 480px;
+  $md-bp-width: 768px;
+  $lg-bp-width: 960px;
+
+  /* Transition */
+  $transitionTime: 0.3s;
+
+/* CSS variable: runtime */
+:root { 
+  /* Typography to use across website display */
+  --font-default: 'Canva Sans', 'Poppings', sans-serif; 
+  --font-heading-primary: 'League Spartan', sans-serif;
+  --font-heading-fancy: 'Luxurious Script', cursive;
+
+  /* Colours used across the website */
+  --color-primary: #810302;
+  --color-secondary: #FFFFFF;
+
+  --dark-red-accent: #480e08;
+
+  --default-red: #810302;
+  --darker-red-accent: #210e0e;
+  --light-red-accent: #bd3231;
+  --lighter-red-accent: #facdcd;
+  --christoff-red: #a4161a;
+  --logo-blue: #2069e9;   // or #0066cc
+  --logo-yellow: #f7d40f;
+  --off-white: #ffffffe6;
+  --red-gray: #afa0a0;
+  --light-gray: #f5f5f5;
+  --gray: #e5e5e5;
+  --dark-gray: #888888;
+
+  --custom-black: black;    /* Can be changed to just a dark near black colour*/
+  --dark-bg: #210e0e;
+
+  /* need to add spacing sizes (like spacing-xs: 4)*/
+  /* also need to add a border radius */
+}

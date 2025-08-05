@@ -1,0 +1,25 @@
+/* Home.module.scss - Custom styles for Homepage */
+/* Imported from index.scss, converted to module.scss to be local*/
+/* Module scss can't use - easily, only _ . Use camelCase*/
+@import '../../styles/styles.scss';
+
+.updateBottomWave {
+  width: 100%;
+  margin-top: clamp(-500px, -21vw, 0px);
+  margin-bottom: -40px;
+}
+
+.waveSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.redSection {
+  background-color: var(--default-red);
+  height: 1vh;
+  width: 100%;
+}
