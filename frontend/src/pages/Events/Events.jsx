@@ -16,15 +16,24 @@ const Events = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [viewMode, setViewMode] = useState('grid');
   //Handle the view mode state
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const month = currentDate.getMonth() + 1;
-      const year = currentDate.getFullYear();
-      const res = await axios.get(`/api/events?month=${month}&year=${year}`);
-      setEvents(res.data);
-    };
-    fetchEvents();
-  }, [currentDate]);
+useEffect(() => {
+  const fetchEvents = async () => {
+    try {
+      //const month = currentDate.getMonth() + 1;
+      //const year = currentDate.getFullYear();
+      const res = await fetch(`http://localhost:5170/api/events?after=2025-06-31&before=2025-08-01`);
+      if (!res.ok) {
+        throw new Error('Failed to fetch events');
+      }
+      const data = await res.json();
+      setEvents(data);
+    } catch (error) {
+      console.error('Error fetching events:', error); // Error handling
+    }
+  };
+  fetchEvents();
+}, [currentDate]);
+
   // Fetch events whenever currentDate changes
   const handleDateClick = (day) => {
     const clickedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);

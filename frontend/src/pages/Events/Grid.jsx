@@ -13,11 +13,12 @@ const Grid = ({ year, month, onDateClick }) => {
     const fetchEvents = async () => {
       try {
         // Fetch events from backend, optionally filter by year/month if your backend supports query params
-        const res = await fetch(`/api/events`);
+        const res = await fetch(`http://localhost:5170/api/events`);
         if (!res.ok) throw new Error('Failed to fetch events'); //error handling
         // Assuming the response is an array of events
         const data = await res.json();
         setEvents(data);
+        console.log('Events fetched:', data);
       } catch (err) {
         console.error(err);
       }

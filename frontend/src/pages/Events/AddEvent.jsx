@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import styles from './Events.module.scss'; 
+import styles from './Events.module.scss';
+import * as assets from '../../assets';
+
+// Component to add a new event 
 
 const AddEvent = ({ onEventAdded }) => {
   const [title, setTitle] = useState('');
@@ -24,13 +27,17 @@ const AddEvent = ({ onEventAdded }) => {
     formData.append('title', title);
     formData.append('date', date);
     formData.append('description', description);
-    formData.append('image', image);
+    //formData.append('image', image); // Uncomment if you want to send the image file
 
     try {
       setLoading(true);
-      const response = await fetch('/api/events', {
+      const response = await fetch('http://localhost:5170/api/events', {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify({title, date, description}), // Send the form data
+        headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+
       });
 
       if (!response.ok) {
@@ -47,43 +54,49 @@ const AddEvent = ({ onEventAdded }) => {
       console.error('Error:', err);
       alert('Error adding event.');
     } finally {
-      setLoading(false);
+      setLoading(false); // Reset loading state
+      console.log('Event added successfully:', formData);
     }
   };
 
   return (
-    <div>
-      <h3>Add New Event</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Event Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-        <textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? 'Adding...' : 'Add Event'}
-        </button>
-      </form>
-    </div>
+   <div className={styles.addEventContainer}>
+  <h3>Add New Event</h3>
+  <form className={styles.form} onSubmit={handleSubmit}>
+    <input
+      className={styles.inputField}
+      type="text"
+      placeholder="Event Title"
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      required
+    />
+    <input
+      className={styles.inputField}
+      type="date"
+      value={date}
+      onChange={(e) => setDate(e.target.value)}
+      required
+    />
+    <textarea
+      className={styles.textArea}
+      placeholder="Description"
+      value={description}
+      onChange={(e) => setDescription(e.target.value)}
+    />
+    <input
+      className={styles.fileInput}
+      type="file"
+      accept="image/*"
+      onChange={handleImageChange}
+      required
+    />
+    <button className={styles.submitButton} type="submit" disabled={loading}>
+      {loading ? 'Adding...' : 'Add Event'}
+    </button>
+  </form>
+</div>
+
   );
 };
 

@@ -11,6 +11,7 @@
   --maroon: #7A0019;
   --gold: #FFCC33;
   --border-radius: 15px;
+  
 }
 
 .overrideContainer {
@@ -18,6 +19,7 @@
   background: white;
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 .topHeader {
@@ -166,3 +168,130 @@ p {
     z-index: -2;
     background-color: #111;
 }*/
+@media (max-width: 768px) {
+  .overrideContainer {
+    padding: 1rem;
+  }
+
+  .topHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .titleContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .monthNavigation,
+  .viewToggle {
+    gap: 6px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .eventCardItem h4 {
+    font-size: 18px;
+  }
+
+  .eventCardItem p {
+    font-size: 14px;
+  }
+}
+
+//Add Event styles
+.addEventContainer {
+  width: 100%;
+  max-width: 450px;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  background-image: 
+      linear-gradient( rgb(255, 255, 255) 25%, rgba(0,0,0,0) 100%),
+      url('./assets/abstract-bg-red.png');
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addEventContainer h3 {
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #222;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inputField,
+.textArea,
+.fileInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.inputField:focus,
+.textArea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
+  outline: none;
+}
+
+.textArea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitButton {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #971709;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #7a0019;
+}
+
+.submitButton:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.waveSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}

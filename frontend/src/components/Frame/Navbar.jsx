@@ -29,7 +29,7 @@ const Navbar = () => {
       {/* <ul className={`${styles.navLinks} ${menuOpen ? "active" : ""}`}> */}
       <ul className={styles.navLinks}>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>The Guild Council</Link></li>
+        <li><Link to='/guild'>The Guild Council</Link></li>
         <li><Link to='/events'>Events</Link></li>
         <li><Link to='/'>Advisories</Link></li>
       </ul>

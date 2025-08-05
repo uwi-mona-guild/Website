@@ -67,3 +67,35 @@
   padding-left: 30px;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10px;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .calDay {
+    height: 140px;
+    font-size: 14px;
+  }
+
+  .dayNum {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .dayEventThumb {
+    object-fit: cover;
+    height: auto;
+    max-height: 80px;
+  }
+}

@@ -9,3 +9,4 @@ export { default as event1 } from './event1.jpeg';
 export { default as event2 } from './event2.jpeg';
 export { default as event3 } from './event3.jpeg';
 export { default as pelican } from './Pelican.jpg';
+export { default as head } from './head.jpg';

@@ -49,6 +49,7 @@ const EventPost = ({ date, events, onClose }) => {
           )}
         </div>
       </div>
+      
     </div>
   );
 };
