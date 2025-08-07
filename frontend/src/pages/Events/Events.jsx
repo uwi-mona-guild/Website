@@ -122,7 +122,7 @@ useEffect(() => {
     <div className={pastEventsStyle.list}>
       {pastEvents.map((event) => (
         <Link
-          to={`/event/${event._id}`}
+          to={`http://localhost:5170/api/event/${event._id}`}
           key={event._id}
           className={pastEventsStyle.cardLink}
         >
