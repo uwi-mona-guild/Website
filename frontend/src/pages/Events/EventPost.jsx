@@ -5,7 +5,7 @@ import React from 'react';
 import { FiX, FiCheckSquare, FiSquare } from 'react-icons/fi';
 import styles from './Events.module.scss';
 
-const EventPost = ({ date, events, onClose }) => {
+const EventPost = ({ date, events, onClose }) => { // receives date, events for that date, and onClose function as props, also changed from event to events
   return (
     <div className={styles.cardOverlay}>
       <div className={styles.card}>

@@ -13,7 +13,7 @@ const List = ({ year, month }) => {
     const fetchEvents = async () => {
       try {
         // Optional: you can filter by year and month if your backend supports query params
-        const res = await fetch(`/api/events`);
+        const res = await fetch(`http://localhost:5170/api/events?after=2025-06-31&before=2025-08-01`);
         if (!res.ok) throw new Error('Failed to fetch events');
         const data = await res.json();
 

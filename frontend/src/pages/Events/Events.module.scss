@@ -1,25 +1,65 @@
 /* Events.module.scss - Custom styles for Events Page */
-/* Imported from index.scss, converted to module.scss to be local*/
-/* Module scss can't use - easily, only _ . Use camelCase*/
-/* This file contains styles for the Events page, including calendar and list views, event cards,
-    breadcrumb navigation, and responsive design elements. It uses scss variables for color themes and includes styles for hover effects, transitions, and layout structures.
-  */
-
 @use '../../styles/styles.scss' as *;
 
 :root {
   --maroon: #7A0019;
   --gold: #FFCC33;
   --border-radius: 15px;
-  
 }
 
+/* ----- Enhanced Breadcrumb Styles ----- */
+.pageWrapper > p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  
+  a {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    
+    &:hover {
+      color: var(--maroon);
+      &::after { width: 100%; }
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--maroon);
+      transition: width 0.3s ease;
+    }
+  }
+  
+  span {
+    font-family: 'Georgia', serif;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+  }
+  
+  &:last-child {
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    color: var(--maroon);
+  }
+}
+
+/* ----- All Original Styles Preserved Below ----- */
 .overrideContainer {
   padding: 2rem;
   background: white;
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
 .topHeader {
@@ -70,6 +110,7 @@
     stroke: white;
   }
 }
+
 .overrideButton:hover {
   background: var(--color-primary);
   scale: 1.1;
@@ -79,7 +120,6 @@
   }
 }
 
-/* Popout card overlay styles */
 .cardOverlay {
   position: fixed;
   top: 0;
@@ -132,23 +172,22 @@
 }
 
 .eventCardItem {
-h4 {
-  margin: 0;
-  font-size: 20px;
-  color: var(--color-primary);
-}
-p {
-  font-size: 16px;
-  color: var(--gray);
-  text-align: center;
-}
+  h4 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--color-primary);
+  }
+  p {
+    font-size: 16px;
+    color: var(--gray);
+    text-align: center;
+  }
 }
 
 .eventTasks {
   margin-top: 1rem;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0 }
   to { opacity: 1 }
@@ -159,15 +198,6 @@ p {
   100% { transform: scale(1); opacity: 1 }
 }
 
-/*.bkgImage {
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    z-index: -2;
-    background-color: #111;
-}*/
 @media (max-width: 768px) {
   .overrideContainer {
     padding: 1rem;
@@ -213,15 +243,14 @@ p {
   }
 }
 
-//Add Event styles
 .addEventContainer {
   width: 100%;
   max-width: 450px;
   margin: 4rem auto;
   padding: 2.5rem 2rem;
   background-image: 
-      linear-gradient( rgb(255, 255, 255) 25%, rgba(0,0,0,0) 100%),
-      url('./assets/abstract-bg-red.png');
+    linear-gradient(rgb(255, 255, 255) 25%, rgba(0,0,0,0) 100%),
+    url('./assets/abstract-bg-red.png');
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   font-family: 'Segoe UI', sans-serif;
@@ -287,6 +316,7 @@ p {
   background-color: #999;
   cursor: not-allowed;
 }
+
 .waveSvg {
   display: block;
   width: 100%;
@@ -294,4 +324,272 @@ p {
   margin: 0;
   padding: 0;
   line-height: 0;
+}
+
+.pageWrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+
+    .highlight {
+      font-family: 'Brush Script MT', cursive;
+      font-style: italic;
+      color: #b30000;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.introText {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}
+
+.otherEvents {
+  border-top: 3px solid var(--color-primary);
+  padding-top: 2rem;
+  margin-top: 3rem;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.otherEventsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.eventCard {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .info {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    a {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-primary);
+      transition: 0.2s;
+
+      &:hover {
+        color: #b30000;
+        border-color: #b30000;
+      }
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+
+  span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &.active {
+      background: var(--color-primary);
+    }
+  }
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 10px;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.img1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.img2 {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+.img3 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.img4 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.img5 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.img6 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.galleryWrapper {
+  position: relative;
+  padding: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.416) 25%, rgba(0, 0, 0, 0) 100%),
+      url('./assets/abstract-bg-red.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
+}
+
+/* other events scss */
+
+.otherEvents {
+  border-top: 3px solid var(--color-primary);
+  padding-top: 2rem;
+  margin-top: 3rem;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    letter-spacing: 0.1em;
+  }
+}
+
+.otherEventsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.eventCard {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (max-width: 768px) {
+  .otherEvents {
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .otherEventsList {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .eventCard {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
 }
