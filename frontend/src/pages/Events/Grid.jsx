@@ -27,14 +27,20 @@ const Grid = ({ year, month, onDateClick }) => {
     fetchEvents();
   }, [year, month]); // Refetch when year or month changes
 
-  const getEventsForDay = (day) => {
-    const dateStr = new Date(year, month, day).toDateString();
-    return events.filter(e => new Date(e.date).toDateString() === dateStr);
-  };
+const getEventsForDay = (day) => {
+  // Build the target date as YYYY-MM-DD in UTC
+  const targetDate = new Date(Date.UTC(year, month, day))
+    .toISOString()
+    .split("T")[0]; // 'YYYY-MM-DD'
+
+  return events.filter(e =>
+    new Date(e.date).toISOString().split("T")[0] === targetDate
+  );
+};
 
   const calendarCells = [];
   const blanks = Array(firstDay).fill(null);
-  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1); /* Create an array of days in the month */
 
   [...blanks, ...days].forEach((day, i) => {
     if (day === null) {

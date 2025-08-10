@@ -68,7 +68,7 @@ const Events = () => {
   const today = new Date();
   const pastEvents = events.filter(e => new Date(e.date) < today);
 
-  const yearlyEvents = [
+  const yearlyEvents = [ //data for the yearly events cards (embed links to separate pages)
   {
     id: "carnival",
     title: "Carnival",
@@ -83,8 +83,15 @@ const Events = () => {
     description: "Sample delicious local and international cuisines in a family-friendly atmosphere.",
     images: [assets.event2, assets.event1]
   },
-  // ... add more soon
+  {
+    id: "sportsday",
+    title: "Sports Day",
+    tags: ["Athletics", "Competition", "Fun"],
+    description: "Join us for a day of friendly competition and athleticism with various sports events.",
+    images: [assets.event3, assets.event1, assets.event2]},
+    // Add more yearly events as needed
 ];
+
 
 
   const toggleExpand = (id) => {

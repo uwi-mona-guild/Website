@@ -1,11 +1,9 @@
-// This file is part of the frontend/src/pages/Events directory
-// It handles the display of individual event posts, showing details like date, title, description, and tasks with completion status.
-// It also includes a close button to exit the event view.
+// frontend/src/pages/Events/EventPost.jsx
 import React from 'react';
 import { FiX, FiCheckSquare, FiSquare } from 'react-icons/fi';
 import styles from './Events.module.scss';
 
-const EventPost = ({ date, events, onClose }) => { // receives date, events for that date, and onClose function as props, also changed from event to events
+const EventPost = ({ date, events, onClose }) => {
   return (
     <div className={styles.cardOverlay}>
       <div className={styles.card}>
@@ -22,9 +20,18 @@ const EventPost = ({ date, events, onClose }) => { // receives date, events for 
           {events && events.length > 0 ? (
             events.map((event) => (
               <div key={event._id} className={styles.eventCardItem}>
+
+                {/* ✅ Cover Image */}
+                {event.image && (
+                  <div className={styles.eventCover}>
+                    <img src={event.image} alt={event.title} />
+                  </div>
+                )}
+
                 <h4>{event.title}</h4>
                 <p>{event.description}</p>
 
+                {/* ✅ Tasks */}
                 {event.tasks?.length > 0 && (
                   <div className={styles.eventTasks}>
                     {event.tasks.map((task, index) => (
@@ -49,7 +56,6 @@ const EventPost = ({ date, events, onClose }) => { // receives date, events for 
           )}
         </div>
       </div>
-      
     </div>
   );
 };

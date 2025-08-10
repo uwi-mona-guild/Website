@@ -1,10 +1,18 @@
 // This file is part of the frontend/src/pages/Events/Yearly Events directory
 // It handles the display of the INTE event page, including images and descriptions"
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "../Events.module.scss";
 import * as assets from "../../../assets";
 
 export default function INTE() {
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className={styles.pageWrapper}>
       {/* Breadcrumb */}
