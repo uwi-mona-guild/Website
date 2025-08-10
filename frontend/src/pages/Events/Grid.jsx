@@ -32,9 +32,12 @@ const getEventsForDay = (day) => {
   const targetDate = new Date(Date.UTC(year, month, day))
     .toISOString()
     .split("T")[0]; // 'YYYY-MM-DD'
-
+  
   return events.filter(e =>
-    new Date(e.date).toISOString().split("T")[0] === targetDate
+    {//console.log("date:", e.start_date);// debugging
+      //console.log("type", typeof e.start_date); // debugging
+      return new Date(e.start_date).toISOString().split("T")[0] === targetDate}
+
   );
 };
 
@@ -52,7 +55,7 @@ const getEventsForDay = (day) => {
           <div className={gridStyles.dayNum}>{day}</div>
           {dayEvents.length > 0 && (
             <img
-              src={dayEvents[0].image}
+              src={dayEvents[0].imageUrl}
               alt="event"
               className={gridStyles.dayEventThumb}
             />

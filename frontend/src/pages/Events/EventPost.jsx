@@ -22,9 +22,9 @@ const EventPost = ({ date, events, onClose }) => {
               <div key={event._id} className={styles.eventCardItem}>
 
                 {/* ✅ Cover Image */}
-                {event.image && (
+                {event.imageUrl && (
                   <div className={styles.eventCover}>
-                    <img src={event.image} alt={event.title} />
+                    <img src={event.imageUrl} alt={event.title} />
                   </div>
                 )}
 
