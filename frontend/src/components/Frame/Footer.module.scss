@@ -248,3 +248,72 @@
   }
 }
 
+//Mobile Specific Adjustments
+@media (max-width: 768px) {
+  .footerContactGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .contactItem {
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .socialIcons {
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .socialIcons a {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .footerMap {
+    height: 250px;
+  }
+
+  .backToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContainer {
+    padding: 0 10px;
+  }
+
+  .footerContactSection h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .contactIcon {
+    font-size: 1.3rem;
+    width: 1.3rem;
+  }
+
+  .socialIcons a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .footerMap {
+    height: 200px;
+  }
+
+  .backToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}

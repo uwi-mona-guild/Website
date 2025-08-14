@@ -181,3 +181,52 @@
     color: #333;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .image {
+    height: 150px;
+  }
+
+  .info h3 {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .modalContent {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modalImages img {
+    max-height: 200px;
+  }
+
+  .modalText h2 {
+    font-size: 20px;
+  }
+
+  .modalText p {
+    font-size: 14px;
+  }
+}

@@ -100,3 +100,138 @@
     max-height: 80px;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10px;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .calDay {
+    height: 140px;
+    font-size: 14px;
+  }
+
+  .dayNum {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .dayEventThumb {
+    object-fit: cover;
+    height: auto;
+    max-height: 80px;
+  }
+}
+
+//mobile styles
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 10px;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .calDay {
+    height: 140px;
+    font-size: 14px;
+  }
+
+  .dayNum {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .dayEventThumb {
+    object-fit: cover;
+    height: auto;
+    max-height: 80px;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    grid-template-columns: 1fr; /* stack days vertically for very small screens */
+    gap: 4px;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    padding-left: 5px;
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .calDay {
+    height: 100px;
+    font-size: 12px;
+  }
+
+  .dayNum {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    top: 2px;
+    left: 2px;
+  }
+
+  .dayEventThumb {
+    max-height: 60px;
+  }
+}
+
+// week view styles
+@media (max-width: 780px) {
+  .container {
+    display: flex;
+    overflow-x: auto; /* enable horizontal scroll */
+    gap: 8px;
+    padding: 0.5rem;
+    scroll-snap-type: x mandatory; /* snap each day into place */
+  }
+
+  .calDay {
+    flex: 0 0 120px; /* fixed width for each day */
+    height: 140px;
+    scroll-snap-align: start; /* snap to start */
+    border-radius: 12px;
+  }
+
+  .header {
+    display: none; /* optional: hide the header weekdays row to save space */
+  }
+
+  .dayNum {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .dayEventThumb {
+    height: auto;
+    max-height: 80px;
+    object-fit: cover;
+  }
+}

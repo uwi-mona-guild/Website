@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Initiatives.module.scss';
 import * as assets from '../../assets';
 
@@ -28,6 +28,11 @@ const Initiatives = () => {
   const handleClick = (id) => {
     setActiveId(prevId => (prevId === id ? null : id));
   };
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div

@@ -1,9 +1,15 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import styles from './Initiatives.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as assets from '../../assets';
 
 const Fresher = () => {
+      const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className={styles.initiatives}>
       {/* Main Banner */}

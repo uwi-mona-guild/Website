@@ -5,6 +5,10 @@ import styles from './Navbar.module.scss';
 
 const Navbar = () => {
   // const [menuOpen, setMenuOpen] = useState(false);
+   const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   
   return (
     <nav className={styles.navbar}>
@@ -14,6 +18,15 @@ const Navbar = () => {
         </a>
       </div>
       
+            {/* Hamburger Menu Icon */}
+      <div
+        className={`${styles.navbar__toggle} ${menuOpen ? 'is-active' : ''}`}
+        onClick={toggleMenu}
+      >
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+      </div>
       {/* Mobile Menu */}
       {/* <div
         id="mobile-menu"
@@ -27,7 +40,7 @@ const Navbar = () => {
 
       {/* Links */}
       {/* <ul className={`${styles.navLinks} ${menuOpen ? "active" : ""}`}> */}
-      <ul className={styles.navLinks}>
+      <ul className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}> {/* Mobile Feature */}
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/guild'>The Guild Council</Link></li>
         <li><Link to='/events'>Events</Link></li>

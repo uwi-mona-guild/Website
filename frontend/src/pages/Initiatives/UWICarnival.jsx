@@ -1,6 +1,6 @@
 import  {useState, useEffect } from 'react'
 import styles from './Initiatives.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as assets from '../../assets';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -15,7 +15,11 @@ const UWICarnival = () => {
   ];
 
 const [current, setCurrent] = useState(0);
+const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,6 +35,10 @@ const [current, setCurrent] = useState(0);
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
+  
+
+
+
 
   return (
         <div className={styles.initiatives}>
