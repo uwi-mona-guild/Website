@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as Frame from './components/Frame';
-import { Home, Events, Guild, AddEvent,Carnival, INTE, SportsDay } from './pages';
+import { Home, Events, Guild, Initiatives, Fresher, AddEvent,Carnival, INTE, SportsDay } from './pages';
 
 
 const App = () => {
@@ -16,7 +16,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/guild" element={<Guild />} />
           <Route path="/events" element={<Events />} />
-          s
+          <Route path="/initiatives" element={<Initiatives />} />
+          <Route path="/initiatives/fresher" element={<Fresher />} />
+
           {/* Yearly Events */}
           <Route path="/events/Carnival" element={<Carnival />} />
           <Route path="/events/INTE" element={<INTE />} />
@@ -30,6 +32,7 @@ const App = () => {
         {/* <Frame.Footer /> */}
       </div>
     </Router>
+  
   );
 }
 

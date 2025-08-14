@@ -1,0 +1,361 @@
+@use '../../styles/styles.scss' as *;
+
+.initiativesPage {
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.initiativesPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/abstract-bg-red.png');
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.pageHeading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: --secondary;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Navigation Tabs */
+.initiativesNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+
+.navButton {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  border: 2px solid --color-primary; /* optional for active highlight */
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+}
+
+/* Active state */
+.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary); /* optional */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* General Image */
+.generalImage {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 40px 0;
+  padding: 20px;
+
+
+  .text {
+    flex: 1;
+  }
+
+  .image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.centered {
+  text-align: center;
+}
+
+.eventsButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #800000; /* UWI Mona maroon */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #a00000;
+  }
+}
+
+
+//Fresher's Series Page
+/* ================================
+   🎨 Initiatives Page Styles
+   Easy-to-edit CSS for Fresher's Series & other initiatives
+================================ */
+
+/* 🌄 Page Wrapper */
+.initiatives {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 4rem;
+
+  /* Background Image with Fade-in Animation */
+}
+.initiatives::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/abstract-bg-red.png');
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* ================================
+   🏞 Main Banner
+================================ */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeInImage 1.5s ease-in-out forwards;
+  }
+
+  .bannerText {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    background: rgb(255, 255, 255);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    color: #fff;
+    max-width: 500px;
+    animation: fadeInCard 1.2s ease-in-out forwards;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+.centered {
+  text-align: center;
+}
+
+.eventsButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #800000; /* UWI Mona maroon */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #a00000;
+  }
+}
+
+
+/* ================================
+   📦 Event Sections
+================================ */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 5%;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  /* Information Card */
+  .text {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9); /* 🖌 CHANGE CARD COLOR HERE */
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeInCard 1.2s ease-in-out forwards;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #800000; /* 🎨 CHANGE HEADER COLOR */
+    }
+
+    p, ul {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+  }
+
+  /* Image Section */
+  .image {
+    flex: 1;
+    img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeInImage 1.5s ease-in-out forwards;
+    }
+  }
+}
+
+
+/* Reverse Layout */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ================================
+   ✨ Animations
+================================ */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInImage {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+//Slider 
+.sliderContainer {
+  position: relative;
+  width: 90%;          /* reduce width from 100% to 90% */
+  max-width: 700px;    /* smaller max width */
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.sliderWrapper {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.dashIndicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 8px;
+}
+
+.dash {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.dash.activeDash {
+  color: #ff4444;
+}

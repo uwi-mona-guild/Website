@@ -23,7 +23,6 @@ const Grid = ({ year, month, onDateClick }) => {
         console.error(err);
       }
     };
-
     fetchEvents();
   }, [year, month]); // Refetch when year or month changes
 

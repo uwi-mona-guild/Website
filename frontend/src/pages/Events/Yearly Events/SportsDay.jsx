@@ -48,15 +48,15 @@ export default function Sports() {
   <h2>HALL RANKINGS</h2>
   <ul className={styles.hallList}>
     {[
-      { name: "COMMUTERS", points: 85, logo: assets.commutersLogo, color: "#FFD700" },
-      { name: "AZ PRESTON", points: 72, logo: assets.azPrestonLogo, color: "#5A2D82" },
-      { name: "LESLIE ROBINSON HALL", points: 68, logo: assets.leslieRobinsonLogo, color: "#50C9C3" },
-      { name: "REX NETTLEFORD HALL", points: 95, logo: assets.rexLogo, color: "#800020" },
-      { name: "IRVINE HALL", points: 60, logo: assets.irvineLogo, color: "#2E8B57" },
-      { name: "GEORGE ALLEYNE HALL", points: 54, logo: assets.georgeAlleyneLogo, color: "#1B4FA1" },
-      { name: "CHANSEA", points: 40, logo: assets.chanseaLogo, color: "#000000" },
-      { name: "ELSA LEO RHYNIE HALL", points: 78, logo: assets.elsaLogo, color: "#E31B23" },
-      { name: "TAYLOR HALL", points: 50, logo: assets.taylorLogo, color: "#0046B3" },
+      { name: "COMMUTERS", points: 10, logo: assets.CommutersLogo, color: "#FFD700" },
+      { name: "AZ PRESTON", points: 72, logo: assets.AstonPrestonLogo, color: "#5A2D82" },
+      { name: "LESLIE ROBINSON HALL", points: 68, logo: assets.LeslieRobinsonLogo, color: "#50C9C3" },
+      { name: "REX NETTLEFORD HALL", points: 95, logo: assets.RexNettlefordLogo, color: "#800020" },
+      { name: "IRVINE HALL", points: 60, logo: assets.IrvineLogo, color: "#2E8B57" },
+      { name: "GEORGE ALLEYNE HALL", points: 88, logo: assets.GeorgeAlleyneLogo, color: "#1B4FA1" },
+      { name: "CHANSEA", points: 89, logo: assets.ChancellorLogo, color: "#000000" },
+      { name: "ELSA LEO RHYNIE HALL", points: 78, logo: assets.ElsaLeoRhynieTowersLogo, color: "#E31B23" },
+      { name: "TAYLOR HALL", points: 102, logo: assets.TaylorLogo, color: "#0046B3" },
     ]
       .sort((a, b) => b.points - a.points)
       .map((hall, index) => (

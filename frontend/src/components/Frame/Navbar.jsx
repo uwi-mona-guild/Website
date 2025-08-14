@@ -32,6 +32,7 @@ const Navbar = () => {
         <li><Link to='/guild'>The Guild Council</Link></li>
         <li><Link to='/events'>Events</Link></li>
         <li><Link to='/'>Advisories</Link></li>
+        <li><Link to='/initiatives'>Initiatives</Link></li>
       </ul>
 
       {/* Search bar */}

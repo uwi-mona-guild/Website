@@ -1,85 +1,95 @@
-// This file is the List component for displaying events in a list format.
-// It shows the event date, title, description, and tasks with completion status.
 import React, { useEffect, useState } from 'react';
-import { FiCheckSquare, FiSquare } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-import listStyles from './List.module.scss';
+import { FiMapPin, FiClock } from 'react-icons/fi';
+import styles from './List.module.scss';
 
-const List = ({ year, month }) => {
+const List = ({ year, month, day, onClose }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        // Optional: you can filter by year and month if your backend supports query params
-        const res = await fetch(`http://localhost:5170/api/events`);
-        if (!res.ok) throw new Error('Failed to fetch events');
-        const data = await res.json();
+useEffect(() => {
+  const fetchEvents = async () => {
+    try {
+      setLoading(true);
+      // Fetch all events from backend
+      console.log(`Fetching events for ${year}-${month + 1}-${day}`);
+      const res = await fetch('http://localhost:5170/api/events');
+      if (!res.ok) throw new Error('Failed to fetch events');
+      const data = await res.json();
+      console.log('Fetched events:', data);
 
-        // Filter events for the selected month and year
-        const filtered = data.filter(event => {
-          const eventDate = new Date(event.date);
-          return (
-            eventDate.getFullYear() === year &&
-            eventDate.getMonth() === month
-          );
-        });
+      // Filter events for the selected month & year
+      const filtered = data.filter(event => {
+        const eventDate = new Date(event.start_date);
+        return (
+          eventDate.getFullYear() === year &&
+          eventDate.getMonth() === month
+        );
+      });
 
-        setEvents(filtered);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+      setEvents(filtered);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchEvents();
-  }, [year, month]);
+  fetchEvents();
+}, [year, month]);
+  
 
-  if (loading) return <p className={listStyles.noEvents}>Loading events...</p>;
-  if (!events.length) return <p className={listStyles.noEvents}>No events this month.</p>;
+  const weekday = new Date(year, month, day).toLocaleDateString('en-US', {
+    weekday: 'short'
+  });
 
   return (
-    <div className={listStyles.container}>
-      {events.map((event) => {
-        const eventDate = new Date(event.date);
-        const day = eventDate.getDate();
-        const weekday = eventDate.toLocaleString('default', { weekday: 'short' }).toUpperCase();
+    <div className={styles.wrapper}>
+      {/* Header */}
+      <div className={styles.header}>
+        <span className={styles.dateNum}>{String(day).padStart(2, '0')}</span>
+        <span className={styles.weekday}>{weekday.toUpperCase()}</span>
+        <button className={styles.closeBtn} onClick={onClose}>X</button>
+      </div>
 
-        return (
-          <div key={event._id} className={listStyles.item}>
-            <div className={listStyles.breadcrumb}>
-              <Link to="/events">Events</Link>
-              <span>•</span>
-              <span className="text-blue-800">List</span>
-            </div>
-            <div className={listStyles.eventDate}>
-              <span className={listStyles.eventDay}>{day}</span>
-              <span className={listStyles.eventWeekday}>{weekday}</span>
-            </div>
+      {loading ? (
+        <div className={styles.noEvents}>Loading events...</div>
+      ) : events.length === 0 ? (
+        <div className={styles.noEvents}>No events for this day.</div>
+      ) : (
+        events.map(event => {
+          const eventDate = new Date(event.start_date);
+          const timeString = eventDate.toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+          }).toLowerCase();
 
-            <div className={listStyles.eventContent}>
-              <h3 className={listStyles.eventTitle}>{event.title}</h3>
-              <p className={listStyles.eventDescription}>{event.description}</p>
+          return (
+            <div key={event._id} className={styles.card}>
+              {/* Left image */}
+              <div className={styles.imageWrapper}>
+                {event.imageUrl && (
+                  <img src={event.imageUrl} alt={event.title} />
+                )}
+              </div>
 
-              <div className={listStyles.eventTasks}>
-                {event.tasks?.map((task, index) => (
-                  <div key={index} className={listStyles.taskItem}>
-                    {task.completed ? (
-                      <FiCheckSquare className={`${listStyles.taskIcon} ${listStyles.completed}`} />
-                    ) : (
-                      <FiSquare className={listStyles.taskIcon} />
-                    )}
-                    <span className={listStyles.taskTime}>{task.time}</span>
-                    <span className={listStyles.taskText}>{task.text}</span>
+              {/* Right content */}
+              <div className={styles.content}>
+                <h3 className={styles.title}>{event.title}</h3>
+                <p className={styles.description}>{event.description}</p>
+                <div className={styles.meta}>
+                  <div className={styles.metaItem}>
+                    <FiClock className={styles.icon} /> {timeString}
                   </div>
-                ))}
+                  <div className={styles.metaItem}>
+                    <FiMapPin className={styles.icon} /> {event.location || 'TBA'}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })
+      )}
     </div>
   );
 };

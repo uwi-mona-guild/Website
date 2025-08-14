@@ -72,7 +72,8 @@
 .titleContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  min-width: 250px; /* keeps arrows and month together */
 }
 
 .title {
@@ -80,16 +81,23 @@
   font-weight: 700;
   color: var(--color-primary);
   margin: 0;
+  text-align: center; /* center title in middle column */
+  white-space: nowrap; /* prevent breaking into two lines */
 }
 
 .monthNavigation {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start; /* arrows stay on the left */
+  min-width: 100px;
 }
+
 
 .viewToggle {
   display: flex;
   gap: 8px;
+  justify-content: flex-end; /* buttons stay on the right */
 }
 
 .overrideButton {
@@ -708,14 +716,15 @@
 }
 
 .hallName {
-  flex: 1;
   color: white;
   text-align: center;
+  align-content: center;
 }
 
 .hallRight {
   display: flex;
   align-items: center;
+  color: white;
   gap: 0.5rem;
 }
 
